@@ -1,24 +1,3 @@
-var errorReferenceCatArray = new Array();
-var errorDeReferenceCatArray = new Array();
-var referenceCatArrayIndex =0;
-var deReferenceCatArrayIndex =0;
-var dotIndex  =0;
-alert("LOL");
-//for categories
-var contentCheckedIndex =0;
-var contentUnCheckedIndex =0;
-var catSelection = false;
-var catIndex = 0;
-var catRedirectUrl='';
-//end
-//for tags
-var tagSelection = false;
-var tagIndex = 0;
-var tagRedirectUrl='';
-//end
-
-var addId=new Array();
-var arrayIndex=0;
 var browserName='';
 var loggedUser='';
 var loggedUserName='';
@@ -49,10 +28,6 @@ var finalJSON = '';
 var sel_action_val='';
 var msg2='Please select a place.';
 
-var selected_cat='';
-var selected_tag='';
-
-
 function showLoading() 
 {
 $("#maskLoad").mask("Please Wait...");
@@ -72,7 +47,7 @@ console.log(data);
 
 function onPageLoad() 
 {
-alert("url:"+document.referrer);
+
 // Detect the browser for adding different code when using IE.
 navigator.sayswho= (function(){    
 var N= navigator.appName, ua= navigator.userAgent, tem;
@@ -118,25 +93,6 @@ if(sel_action_val=="copy"){
 
 src_space_name='';
 dest_space_name='';
-$("#cat_place").hide();
-$("#selCat").hide();
-$("#cat_sel").hide();
-$("#catFrom").hide();
-$("#cat_from_space").hide();
-$("#cat_from_group").hide();
-$("#cat_from_project").hide();
-$("#catTo").hide();
-$("#cat_select_items_button").hide();
-$("#selTag").hide();
-$("#tag_place").hide();
-$("#tag_sel").hide();
-$("#tagFrom").hide();
-$("#tag_from_space").hide();
-$("#tag_from_group").hide();
-$("#tag_from_project").hide();
-$("#tagTo").hide();
-$("#add_tag_button").hide();
-$("#tag_select_items_button").hide();
 $("#cmdu").text("Copy");
 $("#to_space").hide();
 $("#tab_items").show();
@@ -160,10 +116,6 @@ $("#up_from_group").hide();
 $("#up_from_project").hide();
 $("#deleteFrom").hide();
 $("#upFrom").hide();
-$("#cat_place").hide();
-$("#catFrom").hide();
-$("#tag_place").hide();
-$("#tagFrom").hide();
 $('#all_selected_items').css("margin-top", "0px");
 $('#selected_items').css("margin-top", "0px");
 document.getElementById("deleteTo").style.display="inline";
@@ -199,25 +151,6 @@ document.getElementById("to_place").disabled = true;
 src_space_name='';
 dest_space_name='';
 $("#cmdu").text("Move");
-$("#cat_place").hide();
-$("#selCat").hide();
-$("#cat_sel").hide();
-$("#catFrom").hide();
-$("#cat_from_space").hide();
-$("#cat_from_group").hide();
-$("#cat_from_project").hide();
-$("#catTo").hide();
-$("#cat_select_items_button").hide();
-$("#selTag").hide();
-$("#tag_place").hide();
-$("#tag_sel").hide();
-$("#tagFrom").hide();
-$("#tag_from_space").hide();
-$("#tag_from_group").hide();
-$("#tag_from_project").hide();
-$("#tagTo").hide();
-$("#add_tag_button").hide();
-$("#tag_select_items_button").hide();
 $("#dwn_from_space").hide();
 $("#dwn_from_group").hide();
 $("#dwn_from_project").hide();
@@ -242,10 +175,6 @@ $("#up_from_space").hide();
 $("#up_from_group").hide();
 $("#up_from_project").hide();
 $("#upFrom").hide();
-$("#cat_place").hide();
-$("#catFrom").hide();
-$("#tag_place").hide();
-$("#tagFrom").hide();
 document.getElementById("deleteTo").style.display="inline";
 document.getElementById("upTo").style.display="inline";
 $("#deleteTo").hide();
@@ -276,25 +205,6 @@ $('#start_copying_button').unbind('click').click(function(){startMoving();});
 else if(sel_action_val=="delete"){
 src_space_name='';
 dest_space_name='';
-$("#cat_place").hide();
-$("#catFrom").hide();
-$("#cat_sel").hide();
-$("#selCat").hide();
-$("#cat_from_space").hide();
-$("#cat_from_group").hide();
-$("#cat_from_project").hide();
-$("#catTo").hide();
-$("#cat_select_items_button").hide();
-$("#selTag").hide();
-$("#tag_place").hide();
-$("#tag_sel").hide();
-$("#tagFrom").hide();
-$("#tag_from_space").hide();
-$("#tag_from_group").hide();
-$("#tag_from_project").hide();
-$("#tagTo").hide();
-$("#add_tag_button").hide();
-$("#tag_select_items_button").hide();
 $("#dwn_from_space").hide();
 $("#dwn_from_group").hide();
 $("#dwn_from_project").hide();
@@ -346,25 +256,6 @@ if(browserName=="MSIE")
 src_space_name='';
 dest_space_name='';
 $("#cmdu").text("Upload");
-$("#cat_place").hide();
-$("#selCat").hide();
-$("#cat_sel").hide();
-$("#catFrom").hide();
-$("#cat_from_space").hide();
-$("#cat_from_group").hide();
-$("#cat_from_project").hide();
-$("#catTo").hide();
-$("#cat_select_items_button").hide();
-$("#selTag").hide();
-$("#tag_place").hide();
-$("#tag_sel").hide();
-$("#tagFrom").hide();
-$("#tag_from_space").hide();
-$("#tag_from_group").hide();
-$("#tag_from_project").hide();
-$("#add_tag_button").hide();
-$("#tagTo").hide();
-$("#tag_select_items_button").hide();
 $("#dwn_from_space").hide();
 $("#dwn_from_group").hide();
 $("#dwn_from_project").hide();
@@ -389,7 +280,7 @@ $("#copyTo").hide();
 $("#delShow").hide();
 $("#upShow").hide();
 $("#up_place").hide();
-$('#up_place').css("margin-top", "110px");
+$('#up_place').css("margin-top", "90px");
 $("#del_from_space").hide();
 $("#del_from_group").hide();
 $("#del_from_project").hide();
@@ -425,28 +316,6 @@ else
 src_space_name='';
 dest_space_name='';
 $("#dwn_from_space").hide();
-$("#cat_place").hide();
-$("#cat_sel").hide();
-$("#selCat").hide();
-$("#catFrom").hide();
-$("#cat_from_space").hide();
-$("#cat_from_group").hide();
-$("#cat_from_project").hide();
-$("#catTo").hide();
-$("#cat_select_items_button").hide();
-
-$("#selTag").hide();
-$("#tag_place").hide();
-$("#tag_sel").hide();
-$("#tagFrom").hide();
-$("#tag_from_space").hide();
-$("#tag_from_group").hide();
-$("#tag_from_project").hide();
-$("#tagTo").hide();
-$("#tag_select_items_button").hide();
-$("#add_tag_button").hide();
-
-
 $("#dwn_from_group").hide();
 $("#dwn_from_project").hide();
 $("#dwn_place").hide();
@@ -471,7 +340,7 @@ $("#delShow").hide();
 $("#upShow").show();
 $("#dwn_select_items_button").hide();
 $("#up_place").show();
-$('#up_place').css("margin-top", "110px");
+$('#up_place').css("margin-top", "90px");
 $("#del_from_space").hide();
 $("#del_from_group").hide();
 $("#del_from_project").hide();
@@ -492,36 +361,13 @@ else if(sel_action_val=="download"){
 src_space_name='';
 dest_space_name='';
 $("#cmdu").text("Download");
-$("#dwn_place").css("margin-top", "90px");
 $("#tab_items").hide();
-$("#selCat").hide();
-$("#cat_sel").hide();
-$("#cat_place").hide();
-$("#catFrom").hide();
-$("#cat_from_space").hide();
-$("#cat_from_group").hide();
-$("#cat_from_project").hide();
-$("#catTo").hide();
-$("#cat_select_items_button").hide();
-$("#selTag").hide();
-$("#tag_place").hide();
-$("#tag_sel").hide();
-$("#tagFrom").hide();
-$("#tag_from_space").hide();
-$("#tag_from_group").hide();
-$("#tag_from_project").hide();
-$("#tagTo").hide();
-$("#add_tag_button").hide();
-$("#tag_select_items_button").hide();
 $('#all_selected_items').css("margin-top", "80px");
 $('#selected_items').css("margin-top", "80px");
 $("#change_selection_div").hide();
 $("#showDiv").hide();
-$("#del_place").hide();
-$("#dwn_place").show();
-//document.getElementById("del_place").style.display="inline";
-//document.getElementById("del_select_items_button").style.display="inline";
-document.getElementById("dwn_place").style.display="inline";
+document.getElementById("del_place").style.display="inline";
+document.getElementById("del_select_items_button").style.display="inline";
 document.getElementById("up_select_items_button").style.display="inline";
 document.getElementById("up_place").style.display="inline";
 $("#del_place").css("margin-top", "110px");
@@ -556,174 +402,12 @@ $('#select_items_button').hide();
 $('#start_copying_button').val('Start Downloading');
 $('#start_copying_button').unbind('click').click(function(){startDownloading();});
 }
-else if(sel_action_val=="categs"){
-src_space_name='';
-dest_space_name='';
-$("#catShow").show();
-$("#tagShow").hide();
-$("#deleteTo").hide();
-$('#cat_place').css("margin-top", "0px");
-$("#cat_select_items_button").hide();
-$("#selTag").hide();
-$("#tag_place").hide();
-$("#tag_sel").hide();
-$("#tagFrom").hide();
-$("#tag_from_space").hide();
-$("#tag_from_group").hide();
-$("#tag_from_project").hide();
-$("#tagTo").hide();
-$("#add_tag_button").hide();
-$("#tag_select_items_button").hide();
-document.getElementById("cat_place").style.display="inline";
-$("#cat_place").show();
-$("#catFrom").show();
-$("#del_place").css("margin-top", "110px");
-//$('#cat_place').css("margin-top", "120px");
-$("#dwnFrom").hide();
-$("#del_place").hide();
-$("#dwn_from_space").hide();
-$("#dwn_from_group").hide();
-$("#dwn_from_project").hide();
-$("#dwn_place").hide();
-$("#dwnTo").hide();
-$("#cmdu").text("Delete");
-$("#dwn_select_items_button").hide();
-$("#dwnFrom").hide();
-$("#tab_items").show();
-$('#all_selected_items').css("margin-top", "80px");
-$('#selected_items').css("margin-top", "80px");
-$("#change_selection_div").hide();
-$("#showDiv").hide();
-//document.getElementById("del_place").style.display="inline";
-document.getElementById("del_select_items_button").style.display="inline";
-document.getElementById("up_select_items_button").style.display="inline";
-document.getElementById("up_place").style.display="inline";
-$("#del_place").css("margin-top", "110px");
-$("#del_select_items_button").hide();
-$("#up_select_items_button").hide();
-$("#copyTo").hide();
-$("#up_place").hide();
-$("#delShow").hide();
-$("#tagShow").hide();
-$("#upShow").hide();
-$("#upTo").hide();
-$("#del_from_space").hide();
-$("#del_from_group").hide();
-$("#del_from_project").hide();
-$("#up_from_space").hide();
-$("#up_from_group").hide();
-$("#up_from_project").hide();
-document.getElementById("deleteFrom").style.display="inline";
-document.getElementById("upFrom").style.display="inline";
-$('#upFrom').hide();
-$('#from_label').hide();
-$('#to_label').hide();
-$('#to_place').hide();
-$("#to_space").hide();
-$("#to_group").hide();
-$("#to_project").hide();
-$('#select_items_button').hide();	
-$('#start_copying_button').val('Start Deleting');
-$('#start_copying_button').unbind('click').click(function(){startDeleting();});
-}
-
-else if(sel_action_val=="tags"){
-src_space_name='';
-dest_space_name='';
-$("#tagShow").show();
-$("#catShow").hide();
-$("#deleteTo").hide();
-$("#tag_select_items_button").hide();
-$("#selCat").hide();
-$("#cat_place").hide();
-$("#cat_sel").hide();
-$("#catFrom").hide();
-$("#cat_from_space").hide();
-$("#cat_from_group").hide();
-$("#cat_from_project").hide();
-$("#catTo").hide();
-$("#cat_select_items_button").hide();
-document.getElementById("tag_place").style.display="inline";
-$("#tag_place").show();
-$("#tagFrom").show();
-$("#tag_place").css("margin-top", "0px");
-$("#del_place").css("margin-top", "110px");
-//$('#tag_place').css("margin-top", "110px");
-$("#dwnFrom").hide();
-$("#del_place").hide();
-$("#dwn_from_space").hide();
-$("#dwn_from_group").hide();
-$("#dwn_from_project").hide();
-$("#dwn_place").hide();
-$("#dwnTo").hide();
-$("#cmdu").text("Delete");
-$("#dwn_select_items_button").hide();
-$("#dwnFrom").hide();
-$("#tab_items").show();
-$('#all_selected_items').css("margin-top", "80px");
-$('#selected_items').css("margin-top", "80px");
-$("#change_selection_div").hide();
-$("#showDiv").hide();
-//document.getElementById("del_place").style.display="inline";
-document.getElementById("del_select_items_button").style.display="inline";
-document.getElementById("up_select_items_button").style.display="inline";
-document.getElementById("up_place").style.display="inline";
-$("#del_place").css("margin-top", "110px");
-$("#del_select_items_button").hide();
-$("#up_select_items_button").hide();
-$("#dwn_select_items_button").hide();
-$("#copyTo").hide();
-$("#up_place").hide();
-$("#delShow").hide();
-$("#catShow").hide();
-$("#tagShow").show();
-$("#upShow").hide();
-$("#upTo").hide();
-$("#del_from_space").hide();
-$("#del_from_group").hide();
-$("#del_from_project").hide();
-$("#up_from_space").hide();
-$("#up_from_group").hide();
-$("#up_from_project").hide();
-document.getElementById("deleteFrom").style.display="inline";
-document.getElementById("upFrom").style.display="inline";
-$('#upFrom').hide();
-$('#from_label').hide();
-$('#to_label').hide();
-$('#to_place').hide();
-$("#to_space").hide();
-$("#to_group").hide();
-$("#to_project").hide();
-$('#select_items_button').hide();	
-$('#start_copying_button').val('Start Deleting');
-$('#start_copying_button').unbind('click').click(function(){startDeleting();});
-}
-
 else if(sel_action_val=="select_action"){
 src_space_name='';
 dest_space_name='';
 
 document.getElementById("del_place").style.display="inline";
 $("#change_selection_div").hide();
-$("#cat_place").hide();
-$("#catFrom").hide();
-$("#selCat").hide();
-$("#cat_sel").hide();
-$("#cat_from_space").hide();
-$("#cat_from_group").hide();
-$("#cat_from_project").hide();
-$("#catTo").hide();
-$("#cat_select_items_button").hide();
-$("#selTag").hide();
-$("#tag_place").hide();
-$("#tag_sel").hide();
-$("#tagFrom").hide();
-$("#tag_from_space").hide();
-$("#tag_from_group").hide();
-$("#tag_from_project").hide();
-$("#tagTo").hide();
-$("#add_tag_button").hide();
-$("#tag_select_items_button").hide();
 $("#dwn_from_space").hide();
 $("#dwn_select_items_button").hide();
 $("#dwn_from_group").hide();
@@ -733,10 +417,6 @@ $("#dwnTo").hide();
 $("#dwnFrom").hide();
 $("#deleteFrom").hide();
 $("#upFrom").hide();
-$("#cat_place").hide();
-$("#catFrom").hide();
-$("#tag_place").hide();
-$("#tagFrom").hide();
 document.getElementById("deleteTo").style.display="inline";
 document.getElementById("upTo").style.display="inline";
 $("#deleteTo").hide();
@@ -755,8 +435,6 @@ $("#showDiv").hide();
 $("#copyTo").hide();
 $("#delShow").hide();
 $("#del_place").hide();
-$("#catShow").hide();
-$("#tagShow").hide();
 $("#upShow").hide();
 $("#up_place").hide();
 $('#select_items_button').hide();
@@ -898,55 +576,6 @@ document.getElementById("copyTo").style.visibility="hidden";
 }
 }
 
-function catFromPlace()
-{
-// Identifies which space/group/project user has chosen to edit categories into and calls the appropriate method.
-var cat_place = document.getElementById("cat_place");
-var cat_sel_place = cat_place.options[cat_place.selectedIndex].value;
-
-if(cat_sel_place=="select_space"){
-fromSpaceRequest();
-document.getElementById("copyTo").style.visibility="hidden";
-}
-else if(cat_sel_place=="select_group"){
-fromGroupRequest();
-document.getElementById("copyTo").style.visibility="hidden";
-}
-else if(cat_sel_place=="select_project"){
-fromProjectRequest();
-document.getElementById("copyTo").style.visibility="hidden";
-}
-else if(cat_sel_place=="select_one"){
-document.getElementById("start_copying_button").style.visibility="hidden";	
-$("#button_div").hide();
-document.getElementById("copyTo").style.visibility="hidden";
-}
-}
-
-function tagFromPlace()
-{
-// Identifies which space/group/project user has chosen to edit categories into and calls the appropriate method.
-var cat_place = document.getElementById("tag_place");
-var cat_sel_place = cat_place.options[cat_place.selectedIndex].value;
-
-if(cat_sel_place=="select_space"){
-fromSpaceRequest();
-document.getElementById("copyTo").style.visibility="hidden";
-}
-else if(cat_sel_place=="select_group"){
-fromGroupRequest();
-document.getElementById("copyTo").style.visibility="hidden";
-}
-else if(cat_sel_place=="select_project"){
-fromProjectRequest();
-document.getElementById("copyTo").style.visibility="hidden";
-}
-else if(cat_sel_place=="select_one"){
-document.getElementById("start_copying_button").style.visibility="hidden";	
-$("#button_div").hide();
-document.getElementById("copyTo").style.visibility="hidden";
-}
-}
 function toPlace()
 {
 // Identifies which space/group/project the user  has chosen to copy/move the selected content and calls the relevant method.
@@ -967,121 +596,6 @@ document.getElementById("start_copying_button").style.visibility="hidden";
 $("#button_div").hide();
 document.getElementById("copyTo").style.visibility="hidden";
 }
-}
-
-//Code for category test
-
-function categoryTest() {
-osapi.jive.corev3.groups.get({
-uri: space_url
-}).execute(onPlaceFetchBlog);
-}
-
-function onPlaceFetchBlog(response){
-//console.log(JSON.stringify(response));
-//alert(response.resources.categories.ref);
-response.getCategories().execute(catFetch);
-
-}
-
-function catFetch(response) {
-// capture the categories in the space/group/project and then populate the same in a dropdown.
-var groups_list=[];
-
-//console.log(JSON.stringify(response));
-var list_len=response.list.length;
-for(i=0;i<list_len;i++)
-{
-//console.log(response.list[i].name);
-groups_list.push(response.list[i].name);
-document.getElementById('cat_sel').options[i] =new Option(response.list[i].name,response.list[i].name);
-}
-
-var myOptions = {
-    val1 : 'Select Category'
-};
-var mySelect = $('#cat_sel');
-$.each(myOptions, function(val, text) {
-    mySelect.prepend(
-        $('<option></option>').val(val).html(text)
-    );
-});
-
-$('select option[value="val1"]').attr("selected",true);
-}
-
-function categSel()
-{
-var contentCheckedIndex =0;
-var contentUnCheckedIndex =0;
-var mainCheckedItems = new Array();
-var mainUncheckItems = new Array();
-catSelection = true;
-arrayIndex=0;
-//put the selected category to further use
-selected_cat=document.getElementById('cat_sel').value;
-
-if (selected_cat=="val1")
-{
-$("#cat_select_items_button").hide();
-$("#catTo").hide();
-}
-else
-{
-$("#cat_select_items_button").show();
-$("#catTo").show();
-getDocs(space_url);
-getFiles(space_url);
-getDiscussions(space_url);
-getIdeas(space_url);
-getPolls(space_url);
-getBlogs(blog_url);
-}
-
-}
-
-function tagSel()
-{
-$('#selTag').text("Tag");
-$("#selTag").css("margin-left", "180px");
-$("#selTag").css("margin-top", "80px");
-$('#selTag').show();
-selected_cat = '';
-
-var contentCheckedIndex =0;
-var contentUnCheckedIndex =0;
-var mainCheckedItems = new Array();
-var mainUncheckItems = new Array();
-catSelection = true;
-
-arrayIndex=0;
-//put the selected category to further use
-selected_tag=$('#tag_sel').val();
-if (selected_tag=="val1")
-{
-$("#tag_select_items_button").hide();
-$("#tagTo").hide();
-}
-else
-{
-$("#tagTo").show();
-$("#tag_select_items_button").show();
-
-$("#add_tag_button").hide();
-$("#selTag").show();
-
-$("#tag_sel").hide();
-document.getElementById("add_tag").innerHTML=$('#tag_sel').val();
-$("#add_tag").show();
-alert("Break point 1");
-getDocs(space_url);
-getFiles(space_url);
-getDiscussions(space_url);
-getIdeas(space_url);
-getPolls(space_url);
-getBlogs(blog_url);
-}
-
 }
 
 function fromSpaceRequest() {
@@ -1176,18 +690,6 @@ $('#dwn_place option:[text="' + $(this).text() + '"]').attr('selected', true);
 }
 });
 
-//changing the default dropdown selection to 'Change Place'
-$("#cat_place option").each(function() {
-if($(this).text() == 'Select Place') {
-$(this).attr('selected', 'selected'); 
-$('#cat_place :selected').text('Change Place');	
-}
-else if($(this).text() == 'Change Place')
-{  
-$('#cat_place option:[text="' + $(this).text() + '"]').attr('selected', true);  
-}
-});
-
 // calling methods to fetch content.
 getDocs(space_url);
 getFiles(space_url);
@@ -1211,9 +713,7 @@ $("#del_select_items_button").show();
 $("#up_select_items_button").hide();
 $("#change_selection_div").hide();
 $("#delShow").show();
-$("#upShow").hide();
-$("#catShow").hide();
-$("#tagShow").hide();
+$("#upShow").show();
 $("#up_place").hide();
 document.getElementById("del_place").style.display="inline";
 $("#del_place").show();
@@ -1232,15 +732,12 @@ $("#dwnTo").text("Download this:").append('<br/>');
 document.getElementById("dwnTo").style.display="inline";
 $("#dwnTo").show();
 $("#upTo").hide();
-document.getElementById("dwn_place").style.display="inline";
 document.getElementById("dwn_select_items_button").style.display="inline";
 document.getElementById("up_select_items_button").style.display="inline";
 $("#dwn_select_items_button").show();
 $("#up_select_items_button").hide();
 $("#change_selection_div").hide();
 $("#dwnShow").show();
-$("#catShow").hide();
-$("#tagShow").hide();
 $("#upShow").hide();
 $("#up_place").hide();
 document.getElementById("dwn_place").style.display="inline";
@@ -1251,83 +748,6 @@ $("#dwn_from_space").show();
 $("#dwn_from_group").hide();
 $("#dwn_from_project").hide();
 }
-else if(sel_action_val=="categs")
-{
-// actions when the user choses to download files.
-//$('#cat_place').css("margin-top", "120px");
-$('#all_selected_items').css("margin-top", "80px");
-$('#selected_items').css("margin-top", "80px");
-$("#catTo").text("Categorize this:").append('<br/>');
-document.getElementById("catTo").style.display="inline";
-$("#catTo").hide();
-$("#dwnTo").hide();
-$("#upTo").hide();
-document.getElementById("dwn_select_items_button").style.display="inline";
-document.getElementById("cat_select_items_button").style.display="inline";
-document.getElementById("cat_sel").style.display="inline";
-document.getElementById("up_select_items_button").style.display="inline";
-$("#dwn_select_items_button").hide();
-$("#cat_select_items_button").hide();
-$("#cat_sel").show();
-$("#selCat").show();
-$("#up_select_items_button").hide();
-$("#change_selection_div").hide();
-$("#dwnShow").hide();
-$("#catShow").show();
-$("#tagShow").hide();
-$("#upShow").hide();
-$("#up_place").hide();
-document.getElementById("dwn_place").style.display="inline";
-document.getElementById("cat_place").style.display="inline";
-$("#dwn_place").hide();
-$("#cat_place").show();
-document.getElementById("cat_from_space").innerHTML='<span id="myId" style="text-decoration:underline;">Space</span>'+': '+from_place_name;
-$("#cat_place").css("margin-top", "40px");
-$("#cat_from_space").show();
-$("#cat_from_group").hide();
-$("#cat_from_project").hide();
-categoryTest();
-}
-
-else if(sel_action_val=="tags")
-{
-// actions when the user choses to download files.
-//$('#tag_place').css("margin-top", "120px");
-$('#all_selected_items').css("margin-top", "80px");
-$('#selected_items').css("margin-top", "80px");
-$("#tagTo").text("Assign tag to this content:").append('<br/>');
-document.getElementById("tagTo").style.display="inline";
-$("#tagTo").hide();
-$("#dwnTo").hide();
-$("#upTo").hide();
-document.getElementById("dwn_select_items_button").style.display="inline";
-document.getElementById("tag_select_items_button").style.display="inline";
-document.getElementById("tag_sel").style.display="inline";
-document.getElementById("up_select_items_button").style.display="inline";
-$("#dwn_select_items_button").hide();
-$("#tag_select_items_button").hide();
-$("#tag_sel").show();
-$("#add_tag_button").show();
-$("#selTag").show();
-$("#up_select_items_button").hide();
-$("#change_selection_div").hide();
-$("#dwnShow").hide();
-$("#catShow").hide();
-$("#tagShow").show();
-$("#upShow").hide();
-$("#up_place").hide();
-document.getElementById("dwn_place").style.display="inline";
-document.getElementById("tag_place").style.display="inline";
-$("#dwn_place").hide();
-$("#tag_place").show();
-document.getElementById("tag_from_space").innerHTML='<span id="myId" style="text-decoration:underline;">Space</span>'+': '+from_place_name;
-$("#tag_place").css("margin-top", "40px");
-$("#tag_from_space").show();
-$("#tag_from_group").hide();
-$("#tag_from_project").hide();
-categoryTest();
-}
-
 else if(sel_action_val=="select_action")
 {
 // actions if user changes action to default value.
@@ -1344,8 +764,6 @@ $("#showDiv").hide();
 $("#copyTo").hide();
 $("#delShow").hide();
 $("#upShow").hide();
-$("#catShow").hide();
-$("#tagShow").hide();
 $("#del_place").hide();
 }
 
@@ -1462,28 +880,6 @@ $('#dwn_place option:[text="' + $(this).text() + '"]').attr('selected', true);
 }
 });
 
-//changing the default dropdown value to 'Change Place'
-$("#cat_place option").each(function() {
-if($(this).text() == 'Select Place') {
-$(this).attr('selected', 'selected'); 
-$('#cat_place :selected').text('Change Place');	
-}
-else if($(this).text() == 'Change Place')
-{  
-$('#cat_place option:[text="' + $(this).text() + '"]').attr('selected', true);  
-}
-});
-$("#tag_place option").each(function() {
-if($(this).text() == 'Select Place') {
-$(this).attr('selected', 'selected'); 
-$('#tag_place :selected').text('Change Place');	
-}
-else if($(this).text() == 'Change Place')
-{  
-$('#tag_place option:[text="' + $(this).text() + '"]').attr('selected', true);  
-}
-});
-
 // calling methods to fetch content from the selected group.
 getDocs(space_url);
 getFiles(space_url);
@@ -1526,7 +922,6 @@ $("#dwnTo").text("Download this:").append('<br/>');
 document.getElementById("dwnTo").style.display="inline";
 $("#dwnTo").show();
 $("#upTo").hide();
-document.getElementById("dwn_place").style.display="inline";
 document.getElementById("dwn_select_items_button").style.display="inline";
 document.getElementById("up_select_items_button").style.display="inline";
 $("#dwn_select_items_button").show();
@@ -1543,83 +938,6 @@ $("#dwn_from_group").show();
 $("#dwn_from_space").hide();
 $("#dwn_from_project").hide();
 }
-else if(sel_action_val=="categs")
-{
-// actions when the user choses to download files.
-//$('#cat_place').css("margin-top", "120px");
-$('#all_selected_items').css("margin-top", "80px");
-$('#selected_items').css("margin-top", "80px");
-$("#catTo").text("Categorize this:").append('<br/>');
-document.getElementById("catTo").style.display="inline";
-$("#catTo").hide();
-$("#dwnTo").hide();
-$("#upTo").hide();
-document.getElementById("dwn_select_items_button").style.display="inline";
-document.getElementById("cat_select_items_button").style.display="inline";
-document.getElementById("cat_sel").style.display="inline";
-document.getElementById("up_select_items_button").style.display="inline";
-$("#dwn_select_items_button").hide();
-$("#cat_select_items_button").hide();
-$("#cat_sel").show();
-$("#selCat").show();
-$("#up_select_items_button").hide();
-$("#change_selection_div").hide();
-$("#dwnShow").hide();
-$("#catShow").show();
-$("#tagShow").hide();
-$("#upShow").hide();
-$("#up_place").hide();
-document.getElementById("dwn_place").style.display="inline";
-document.getElementById("cat_place").style.display="inline";
-$("#dwn_place").hide();
-$("#cat_place").show();
-document.getElementById("cat_from_group").innerHTML='<span id="myId" style="text-decoration:underline;">Group</span>'+': '+from_place_name;
-$("#cat_place").css("margin-top", "40px");
-$("#cat_from_space").hide();
-$("#cat_from_group").show();
-$("#cat_from_project").hide();
-categoryTest();
-}
-
-else if(sel_action_val=="tags")
-{
-// actions when the user choses to download files.
-//$('#tag_place').css("margin-top", "120px");
-$('#all_selected_items').css("margin-top", "80px");
-$('#selected_items').css("margin-top", "80px");
-$("#tagTo").text("Assign tag to this content:").append('<br/>');
-document.getElementById("catTo").style.display="inline";
-$("#tagTo").hide();
-$("#dwnTo").hide();
-$("#upTo").hide();
-document.getElementById("dwn_select_items_button").style.display="inline";
-document.getElementById("tag_select_items_button").style.display="inline";
-document.getElementById("tag_sel").style.display="inline";
-document.getElementById("up_select_items_button").style.display="inline";
-$("#dwn_select_items_button").hide();
-$("#tag_select_items_button").hide();
-$("#tag_sel").show();
-$("#add_tag_button").show();
-$("#selTag").show();
-$("#up_select_items_button").hide();
-$("#change_selection_div").hide();
-$("#dwnShow").hide();
-$("#catShow").hide();
-$("#tagShow").show();
-$("#upShow").hide();
-$("#up_place").hide();
-document.getElementById("dwn_place").style.display="inline";
-document.getElementById("tag_place").style.display="inline";
-$("#dwn_place").hide();
-$("#tag_place").show();
-document.getElementById("tag_from_group").innerHTML='<span id="myId" style="text-decoration:underline;">Group</span>'+': '+from_place_name;
-$("#tag_place").css("margin-top", "40px");
-$("#tag_from_space").hide();
-$("#tag_from_group").show();
-$("#tag_from_project").hide();
-categoryTest();
-}
-
 else if(sel_action_val=="select_action")
 {
 //action when user changes the action to default value.
@@ -1751,18 +1069,6 @@ $('#dwn_place option:[text="' + $(this).text() + '"]').attr('selected', true);
 }
 });
 
-//changing the default dropdown value to 'Change Place'
-$("#cat_place option").each(function() {
-if($(this).text() == 'Select Place') {
-$(this).attr('selected', 'selected'); 
-$('#cat_place :selected').text('Change Place');	
-}
-else if($(this).text() == 'Change Place')
-{  
-$('#cat_place option:[text="' + $(this).text() + '"]').attr('selected', true);  
-}
-});
-
 // calling the methods to fetch content from selected project.
 getDocs(space_url);
 getFiles(space_url);
@@ -1805,7 +1111,6 @@ $("#dwnTo").text("Download this:").append('<br/>');
 document.getElementById("dwnTo").style.display="inline";
 $("#dwnTo").show();
 $("#upTo").hide();
-document.getElementById("dwn_place").style.display="inline";
 document.getElementById("dwn_select_items_button").style.display="inline";
 document.getElementById("up_select_items_button").style.display="inline";
 $("#dwn_select_items_button").show();
@@ -1824,88 +1129,6 @@ $("#dwn_from_group").hide();
 $("#dwn_from_space").hide();
 $("#dwn_from_project").show();
 }
-else if(sel_action_val=="categs")
-{
-
-// actions when the user choses to download files.
-//$('#cat_place').css("margin-top", "120px");
-$('#all_selected_items').css("margin-top", "80px");
-$('#selected_items').css("margin-top", "80px");
-$("#catTo").text("Categorize this:").append('<br/>');
-document.getElementById("catTo").style.display="inline";
-$("#catTo").hide();
-$("#dwnTo").hide();
-$("#upTo").hide();
-document.getElementById("dwn_select_items_button").style.display="inline";
-document.getElementById("cat_select_items_button").style.display="inline";
-document.getElementById("cat_sel").style.display="inline";
-document.getElementById("up_select_items_button").style.display="inline";
-$("#dwn_select_items_button").hide();
-$("#cat_select_items_button").hide();
-$("#cat_sel").show();
-$("#selCat").show();
-$("#up_select_items_button").hide();
-$("#change_selection_div").hide();
-$("#dwnShow").hide();
-$("#catShow").show();
-$("#tagShow").hide();
-$("#upShow").hide();
-$("#up_place").hide();
-document.getElementById("dwn_place").style.display="inline";
-document.getElementById("cat_place").style.display="inline";
-$("#dwn_place").hide();
-$("#cat_place").show();
-document.getElementById("cat_from_project").innerHTML='<span id="myId" style="text-decoration:underline;">Project</span>'+': '+from_place_name;
-$("#cat_place").css("margin-top", "40px");
-$("#cat_from_space").hide();
-$("#cat_from_group").hide();
-$("#cat_from_project").show();
-categoryTest();
-}
-
-else if(sel_action_val=="tags")
-{
-
-// actions when the user choses to download files.
-//$('#tag_place').css("margin-top", "120px");
-$('#all_selected_items').css("margin-top", "80px");
-$('#selected_items').css("margin-top", "80px");
-$("#tagTo").text("Assign tag to this content:").append('<br/>');
-document.getElementById("tagTo").style.display="inline";
-$("#catTo").hide();
-$("#tagTo").hide();
-$("#dwnTo").hide();
-$("#upTo").hide();
-document.getElementById("dwn_select_items_button").style.display="inline";
-document.getElementById("tag_select_items_button").style.display="inline";
-document.getElementById("tag_sel").style.display="inline";
-document.getElementById("up_select_items_button").style.display="inline";
-$("#dwn_select_items_button").hide();
-$("#tag_select_items_button").hide();
-$("#cat_sel").hide();
-$("#tag_sel").show();
-$("#add_tag_button").show();
-$("#selCat").hide();
-$("#selTag").show();
-$("#up_select_items_button").hide();
-$("#change_selection_div").hide();
-$("#dwnShow").hide();
-$("#catShow").hide();
-$("#tagShow").show();
-$("#upShow").hide();
-$("#up_place").hide();
-document.getElementById("dwn_place").style.display="inline";
-document.getElementById("tag_place").style.display="inline";
-$("#dwn_place").hide();
-$("#tag_place").show();
-document.getElementById("tag_from_project").innerHTML='<span id="myId" style="text-decoration:underline;">Project</span>'+': '+from_place_name;
-$("#tag_place").css("margin-top", "40px");
-$("#tag_from_space").hide();
-$("#tag_from_group").hide();
-$("#tag_from_project").show();
-categoryTest();
-}
-
 else if(sel_action_val=="select_action")
 {
 // actions when the user changes the action to default value.
@@ -2033,8 +1256,8 @@ $("#upTo").show();
 document.getElementById("up_select_items_button").style.display="inline";
 document.getElementById("del_select_items_button").style.display="inline";
 $("#up_select_items_button").show();
-$('#up_select_items_button').css("margin-top", "200px");
-$('#up_select_items_button').css("margin-left", "-75px");
+$('#up_select_items_button').css("margin-top", "180px");
+$('#up_select_items_button').css("margin-left", "-80px");
 $("#del_select_items_button").hide();
 $("#button_div").hide();	
 $("#change_selection_div").hide();
@@ -2042,7 +1265,7 @@ $("#upShow").show();
 document.getElementById("up_place").style.display="inline";
 $("#up_place").show();
 document.getElementById("up_from_space").innerHTML='<span id="myId" style="text-decoration:underline;">Space</span>'+': '+to_place_name;
-$('#up_place').css("margin-top", "145px");
+$('#up_place').css("margin-top", "128px");
 $("#up_from_project").hide();
 $("#up_from_group").hide();
 $("#up_from_space").show();
@@ -2059,11 +1282,7 @@ $("#upShow").hide();
 document.getElementById("upTo").style.display="inline";
 $("#upTo").hide();
 $("#up_place").hide();
-$("#cat_place").hide();
-$("#catFrom").hide();
-$("#tag_place").hide();
 $("#upFrom").hide();
-$("#tagFrom").hide();
 $("#up_from_space").hide();
 $("#up_from_group").hide();
 $("#up_from_project").hide();
@@ -2188,8 +1407,8 @@ $("#upTo").show();
 document.getElementById("up_select_items_button").style.display="inline";
 document.getElementById("del_select_items_button").style.display="inline";
 $("#up_select_items_button").show();
-$('#up_select_items_button').css("margin-top", "200px");
-$('#up_select_items_button').css("margin-left", "-75px");
+$('#up_select_items_button').css("margin-top", "180px");
+$('#up_select_items_button').css("margin-left", "-80px");
 $("#del_select_items_button").hide();
 $("#change_selection_div").hide();
 $("#button_div").hide();
@@ -2197,7 +1416,7 @@ $("#upShow").show();
 document.getElementById("up_place").style.display="inline";
 $("#up_place").show();
 document.getElementById("up_from_group").innerHTML='<span id="myId" style="text-decoration:underline;">Group</span>'+': '+to_place_name;
-$('#up_place').css("margin-top", "145px");
+$('#up_place').css("margin-top", "128px");
 $("#up_from_project").hide();
 $("#up_from_group").show();
 $("#up_from_space").hide();
@@ -2215,10 +1434,6 @@ document.getElementById("upTo").style.display="inline";
 $("#upTo").hide();
 $("#up_place").hide();
 $("#upFrom").hide();
-$("#cat_place").hide();
-$("#catFrom").hide();
-$("#tag_place").hide();
-$("#tagFrom").hide();
 $("#up_from_space").hide();
 $("#up_from_group").hide();
 $("#up_from_project").hide();
@@ -2344,8 +1559,8 @@ $("#upTo").show();
 document.getElementById("up_select_items_button").style.display="inline";
 document.getElementById("del_select_items_button").style.display="inline";
 $("#up_select_items_button").show();
-$('#up_select_items_button').css("margin-top", "200px");
-$('#up_select_items_button').css("margin-left", "-75px");
+$('#up_select_items_button').css("margin-top", "180px");
+$('#up_select_items_button').css("margin-left", "-80px");
 $("#del_select_items_button").hide();
 $("#change_selection_div").hide();
 $("#button_div").hide();
@@ -2353,7 +1568,7 @@ $("#upShow").show();
 document.getElementById("up_place").style.display="inline";
 $("#up_place").show();
 document.getElementById("up_from_project").innerHTML='<span id="myId" style="text-decoration:underline;">Project</span>'+': '+to_place_name;
-$('#up_place').css("margin-top", "145px");
+$('#up_place').css("margin-top", "128px");
 $("#up_from_project").show();
 $("#up_from_group").hide();
 $("#up_from_space").hide();
@@ -2371,10 +1586,6 @@ document.getElementById("upTo").style.display="inline";
 $("#upTo").hide();
 $("#up_place").hide();
 $("#upFrom").hide();
-$("#cat_place").hide();
-$("#catFrom").hide();
-$("#tag_place").hide();
-$("#tagFrom").hide();
 $("#up_from_space").hide();
 $("#up_from_group").hide();
 $("#up_from_project").hide();
@@ -2410,840 +1621,6 @@ $('#to_place option:[text="' + $(this).text() + '"]').attr('selected', true);
 osapi.jive.corev3.places.requestPicker(params);
 }
 
-//*****************Code for Managing catagories*******************
-
-var mainCheckedItems = new Array();
-var mainUncheckItems = new Array();
-
-/*mainUncheckItems[0] = "https://accenture.jiveon.com/api/core/v3/contents/43423";
-mainUncheckItems[1] = "https://accenture.jiveon.com/api/core/v3/contents/43425";
-mainUncheckItems[2] = "https://accenture.jiveon.com/api/core/v3/contents/43426";
-mainUncheckItems[3] = "https://accenture.jiveon.com/api/core/v3/contents/43427";
-mainCheckedItems[0] = "https://accenture.jiveon.com/api/core/v3/contents/43421";
-mainCheckedItems[1] = "https://accenture.jiveon.com/api/core/v3/contents/43420";
-mainCheckedItems[2] = "https://accenture.jiveon.com/api/core/v3/contents/43424";*/
-
-var  checkedItemsArray = new Array();
-var uncheckItemArray = new Array();
-
-var checkItemArrayUpdated = new Array();
-var uncheckedItemArrayUpdated = new Array();
-
- 
-
-function filterCheckedUncheckCatgUrl(){
-	
-     
-	  
-	  alert("hi filter");
-	  var checkedIndex = 0;
-	  var uncheckedIndex = 0;
-        var val = [];
-        $(':checkbox').each(function(i){
-			
-		 val[i] = $(this).val();
-		 alert(val[i]);
-		 if(val[i] != 'on'){
-		 if($(this).is(':checked')){
-		 alert("true");
-			checkedItemsArray[checkedIndex] = $(this).val();
-			checkedIndex++;
-		 }
-		 else {
-				 alert("false");
-			uncheckItemArray[uncheckedIndex] = $(this).val();
-			uncheckedIndex++;
-		}
-		}
-		
-	
-	    });
-			/*Print the checked and the unchecked*/
-			alert("checkedItemsArray .length = "+checkedItemsArray.length);
-		for(var index=0; index < checkedItemsArray.length;index++) {
-			alert("checked items : "+checkedItemsArray[index]);
-		}
-		alert("uncheckItemArray .length = "+uncheckItemArray.length);
-		for(var index=0;index < uncheckItemArray.length;index++) {
-			alert("unchecked items : "+uncheckItemArray[index]);
-		}
-		
-		/*Filter the the list */
-		var checkedIndex = 0;
-		var uncheckedIndex = 0;
-		for(var outerIndex=0;outerIndex < checkedItemsArray.length;outerIndex++) {
-			for(var innerIndex=0;innerIndex< mainCheckedItems.length;innerIndex++) {
-				//alert("checkedItemsArray[outerIndex] = mainCheckedItems[innerIndex] :" +checkedItemsArray[outerIndex] == mainCheckedItems[innerIndex]);
-				//alert("checkedItemsArray[outerIndex] = mainCheckedItems[innerIndex] :" +checkedItemsArray[outerIndex] == mainCheckedItems[innerIndex]);
-				if(checkedItemsArray[outerIndex] == mainCheckedItems[innerIndex]) {
-					break;
-				}
-				else {
-					if(innerIndex == (mainCheckedItems.length - 1)) {
-					checkItemArrayUpdated[checkedIndex] = checkedItemsArray[outerIndex];
-					checkedIndex++;
-					}
-					
-				}
-			}
-		}
-		
-		for(var index=0; index < checkItemArrayUpdated.length;index++) {
-			alert("new checked items : "+checkItemArrayUpdated[index]);
-			console.log("new checked items : "+checkItemArrayUpdated[index]);
-		}
-		
-		for(var outerIndex=0;outerIndex < uncheckItemArray.length;outerIndex++) {
-			for(var innerIndex=0;innerIndex< mainUncheckItems.length;innerIndex++) {
-				//alert("checkedItemsArray[outerIndex] = mainCheckedItems[innerIndex] :" +checkedItemsArray[outerIndex] == mainCheckedItems[innerIndex]);
-				if(uncheckItemArray[outerIndex] == mainUncheckItems[innerIndex]) {
-					break;
-				}
-				else {
-					if(innerIndex == (mainUncheckItems.length - 1)) {
-					uncheckedItemArrayUpdated[uncheckedIndex] = uncheckItemArray[outerIndex];
-					uncheckedIndex++;
-					}
-					
-				}
-			}
-		}
-		
-		for(var index=0;index < uncheckedItemArrayUpdated.length;index++) {
-			alert("new unchecked items : "+uncheckedItemArrayUpdated[index]);
-				console.log("new unchecked items : "+uncheckedItemArrayUpdated[index]);
-		}
-		
-		
-
-		
-		}
-		
-	function filterCheckedUncheckCatgUrl1(){
-	var contentTypeCheckBoxIdArray = new Array();
-
-	              contentTypeCheckBoxIdArray[0] = '#filesTable input[type=checkbox]';
-                  contentTypeCheckBoxIdArray[1] = '#docsTable input[type=checkbox]';
-                  contentTypeCheckBoxIdArray[2] = '#ideaTable input[type=checkbox]';
-                  contentTypeCheckBoxIdArray[3] = '#pollTable input[type=checkbox]';
-                  contentTypeCheckBoxIdArray[4] = '#blogTable input[type=checkbox]';
-                  contentTypeCheckBoxIdArray[5] = '#discTable input[type=checkbox]';
-
-
-                  var checkedIndex = 0;
-                  var uncheckedIndex = 0;
-        var val = [];
-                                for(index =0;index <  contentTypeCheckBoxIdArray.length;index++) {
-        //$('#filesTable input[type=checkbox]').each(function(i){
-                                $(contentTypeCheckBoxIdArray[index]).each(function(i){
-                                                
-                                val[i] = $(this).val();
-                                // alert(val[i]);
-                                if(val[i] != 'on'){
-                                if($(this).is(':checked')){
-                                //alert("true");
-                                                checkedItemsArray[checkedIndex] = $(this).val();
-                                                checkedIndex++;
-                                }
-                                else {
-                                                                // alert("false");
-                                                uncheckItemArray[uncheckedIndex] = $(this).val();
-                                                uncheckedIndex++;
-                                }
-                                }
-                                
-                
-                    });
-                                
-                                }
-                                alert("checkedItemsArray.length = "+checkedItemsArray.length);
-                                console.log("checkedItemsArray.length = "+checkedItemsArray.length);
-                                alert("uncheckItemArray.length = "+uncheckItemArray.length);
-                                console.log("uncheckItemArray.length = "+uncheckItemArray.length);
-		catIndex=0;
-		updateCategoriesForNewContents1();		
-
-
-		
-		}
-
-	  
-function updateCategoriesForNewContents() {
-	/*alert("Into the updateCategories for new contents");
-	console.log("Into the updateCategories for new contents");
-	for(var index=0; index < checkItemArrayUpdated.length;index++) {
-			alert("new checked items : "+checkItemArrayUpdated[index]);
-			console.log("new checked items : "+checkItemArrayUpdated[index]);
-		}
-	for(var index=0;index < uncheckedItemArrayUpdated.length;index++) {
-			alert("new unchecked items : "+uncheckedItemArrayUpdated[index]);
-				console.log("new unchecked items : "+uncheckedItemArrayUpdated[index]);
-		}
-
-		alert("checkItemArrayUpdated.length = "+checkItemArrayUpdated.length+" catIndex ="+catIndex);
-	console.log("checkItemArrayUpdated.length = "+checkItemArrayUpdated.length+" catIndex="+catIndex);*/
-		
-if(catIndex < checkItemArrayUpdated.length) {
-
-	var contentURL = checkItemArrayUpdated[catIndex];
-	var toUpdateCategories;
-	var toCategoriesArray;
-	var updatedCategoryList = new Array();
-	
-	//alert("contentURL got is ="+contentURL);
-	console.log("contentURL got is ="+contentURL);
-	osapi.jive.corev3.contents.get({
-	fields: '@all',	
-	uri: contentURL
-	}).execute(function(contentCatResponseObj){
-				//alert(JSON.stringify(contentCatResponseObj));
-				console.log(JSON.stringify(contentCatResponseObj));
-				
-					//alert(contentCatResponseObj.categories);
-					//alert("selected_cat = "+selected_cat);
-				toUpdateCategories = contentCatResponseObj.categories;
-				//toUpdateCategories = toUpdateCategories+','+selected_cat;
-				//toUpdateCategories = ["cat1","cat2","cat3"];
-				//toCategoriesArray = toUpdateCategories.split(",");
-				var tempIndex =0;
-				for(var index=0;index < toUpdateCategories.length;index++,tempIndex++) {
-						alert("---cc-"+toUpdateCategories[index]);
-						console.log("---cc-"+toUpdateCategories[index]);
-						updatedCategoryList[tempIndex]=toUpdateCategories[index];
-				}
-					updatedCategoryList[tempIndex]=selected_cat;
-				//toUpdateCategories = selected_cat;
-				//alert("toUpdateCategories = "+toUpdateCategories);
-				console.log("toUpdateCategories = "+toUpdateCategories);
-				//contentCatResponseObj.categories = toUpdateCategories;
-				contentCatResponseObj.categories = updatedCategoryList;
-				contentCatResponseObj.update().execute(function(catUpdateResponse){
-				//alert(JSON.stringify(catUpdateResponse));
-				console.log(JSON.stringify(catUpdateResponse));
-				});
-				catIndex++;
-				updateCategoriesForNewContents();
-				
-			});
-
-}
-else {
-catIndex = 0;
-removeCategoriesForContents();
-}
-
-}
-
-function updateCategoriesForNewContents1() {
-	//alert("Into the updateCategories for new contents");
-	console.log("Into the updateCategories for new contents");
-	for(var index=0; index < checkedItemsArray.length;index++) {
-			//alert("new checked items : "+checkedItemsArray[index]);
-			//console.log("new checked items : "+checkedItemsArray[index]);
-		}
-	for(var index=0;index < uncheckedItemArrayUpdated.length;index++) {
-			//alert("new unchecked items : "+uncheckedItemArrayUpdated[index]);
-			//	console.log("new unchecked items : "+uncheckedItemArrayUpdated[index]);
-		}
-
-		//alert("checkItemArrayUpdated.length = "+uncheckItemArray.length+" catIndex ="+catIndex);
-	//console.log("checkItemArrayUpdated.length = "+uncheckItemArray.length+" catIndex="+catIndex);
-		
-if(catIndex < checkedItemsArray.length) {
-
-	var contentURL = checkedItemsArray[catIndex];
-	var toUpdateCategories;
-	var toCategoriesArray;
-	var updatedCategoryList = new Array();
-	var isCategoryExisting =false;
-	
-	//alert("contentURL got is ="+contentURL);
-	console.log("contentURL got is ="+contentURL);
-	osapi.jive.corev3.contents.get({
-	fields: '@all',	
-	uri: contentURL
-	}).execute(function(contentCatResponseObj){
-				//alert(JSON.stringify(contentCatResponseObj));
-				//console.log(JSON.stringify(contentCatResponseObj));
-				
-					//console.log(contentCatResponseObj.categories);
-					//alert("selected_cat = "+selected_cat);
-				toUpdateCategories = contentCatResponseObj.categories;
-				
-				var tempIndex =0;
-				for(var index=0;index < toUpdateCategories.length;index++,tempIndex++) {
-						//alert("---cc-"+toUpdateCategories[index]);
-						//console.log("---cc-"+toUpdateCategories[index]);
-						updatedCategoryList[tempIndex]=toUpdateCategories[index];
-						if(toUpdateCategories[index] == selected_cat) {
-						isCategoryExisting = true;
-						}
-						
-						
-				}
-			//	alert("isCategoryExisting = "+isCategoryExisting);
-					if(!isCategoryExisting){
-						updatedCategoryList[tempIndex]=selected_cat;
-						isCategoryExisting = false;
-					}
-					
-				for(var index=0;index < updatedCategoryList.length;index++,tempIndex++) {
-					//console.log("VVVV-- "+updatedCategoryList[index]);
-				}
-				
-				//console.log("toUpdateCategories = "+toUpdateCategories);
-				
-				contentCatResponseObj.categories = updatedCategoryList;
-				contentCatResponseObj.update().execute(function(catUpdateResponse){
-				
-				//console.log("updated --"+JSON.stringify(catUpdateResponse));
-				if (catUpdateResponse.error){
-        errorReferenceCatArray[referenceCatArrayIndex] = contentCatResponseObj.resources.html.ref;
-        referenceCatArrayIndex++;
-        
-        }
-
-				
-				});
-				catIndex++;
-				updateCategoriesForNewContents1();
-				
-			});
-
-}
-else {
-catIndex = 0;
-removeCategoriesForContents();
-}
-
-}
-
-function removeCategoriesForContents() {
-	
-		
-if(catIndex < uncheckItemArray.length) {
-
-	var contentURL = uncheckItemArray[catIndex];
-	var toUpdateCategories;
-	var toCategoriesArray;
-	var updatedCategoryList = new Array();
-	
-	//alert("contentURL got is ="+contentURL);
-	console.log("contentURL got is ="+contentURL);
-	osapi.jive.corev3.contents.get({
-	fields: '@all',	
-	uri: contentURL
-	}).execute(function(contentCatResponseObj){
-				//alert(JSON.stringify(contentCatResponseObj));
-				console.log(JSON.stringify(contentCatResponseObj));
-				
-					//alert(contentCatResponseObj.categories);
-					//alert("selected_cat = "+selected_cat);
-				toUpdateCategories = contentCatResponseObj.categories;
-				//toUpdateCategories = toUpdateCategories+','+selected_cat;
-				//toUpdateCategories = ["cat1","cat2","cat3"];
-				//toCategoriesArray = toUpdateCategories.split(",");
-				var tempIndex =0;
-				for(var index=0;index < toUpdateCategories.length;index++) {
-						if(selected_cat != toUpdateCategories[index]){
-						//	alert("---cc-"+toUpdateCategories[index]);
-							console.log("---cc-"+toUpdateCategories[index]);
-							updatedCategoryList[tempIndex]=toUpdateCategories[index];
-							tempIndex++;
-						}
-				}
-				
-				//toUpdateCategories = selected_cat;
-				//alert("toUpdateCategories = "+toUpdateCategories);
-				console.log("toUpdateCategories = "+toUpdateCategories);
-				//contentCatResponseObj.categories = toUpdateCategories;
-				contentCatResponseObj.categories = updatedCategoryList;
-				contentCatResponseObj.update().execute(function(catUpdateResponse){
-				//alert(JSON.stringify(catUpdateResponse));
-				console.log("UPDated -- "+JSON.stringify(catUpdateResponse));
-				});
-				catIndex++;
-				removeCategoriesForContents();
-				
-			});
-
-}
-else {
-            for(var index = 0;index < errorReferenceCatArray.length;index++) {
-              console.log("Could Not Reference "+errorReferenceCatArray[index]);
-            } 
-
-            for(var index = 0;index < errorDeReferenceCatArray.length;index++) {
-              console.log("Could Not De-Reference "+errorDeReferenceCatArray[index]);
-            }  
-
-	console.log("Category "+selected_cat+" succesfully updated");
-		//alert("Category "+selected_cat+" succesfully updated");
-		var tempRedirectionUrl = source_html_url+'/content?filterID=contentstatus[published]~category['+selected_cat+']';
-		
-		console.log("temRedirectionUrl = "+tempRedirectionUrl);
-		/*$("#stylized").fadeOut(5000,function(){
-		window.location = window.location = tempRedirectionUrl;
-			});*/
-			
-		/*document.getElementById("frame1").contentDocument.body.innerHTML = "Updating is in Progress.<br>Please leave this window open until the updating process has been completed.<br><br><span id='mySpan' style='font-weight:bold;'>"+"'Moving completed. Please click   <a href='+tempRedirectionUrl+'>here </a>  for the new location of your content.'.fontcolor("#3778C7")+"</span>";*/
-		var str='Updating categories is completed. Please click   <a href='+tempRedirectionUrl+'>here </a>  for the new location of your content.';
-		document.getElementById("frame1").contentDocument.body.innerHTML = "Updating Categories in Progress.<br>Please leave this window open until the moving process has been completed.<br><br><span id='mySpan' style='font-weight:bold;'>"+str.fontcolor("#3778C7")+"</span>";
-		
-		
-}
-
-
-
-}
-	
-	
-
-//**********************End of the code*******************
-
-
-
-//*****************Code for Managing Tags*******************
-
-var mainCheckedItems = new Array();
-var mainUncheckItems = new Array();
-
-/*mainUncheckItems[0] = "https://accenture.jiveon.com/api/core/v3/contents/43423";
-mainUncheckItems[1] = "https://accenture.jiveon.com/api/core/v3/contents/43425";
-mainUncheckItems[2] = "https://accenture.jiveon.com/api/core/v3/contents/43426";
-mainUncheckItems[3] = "https://accenture.jiveon.com/api/core/v3/contents/43427";
-mainCheckedItems[0] = "https://accenture.jiveon.com/api/core/v3/contents/43421";
-mainCheckedItems[1] = "https://accenture.jiveon.com/api/core/v3/contents/43420";
-mainCheckedItems[2] = "https://accenture.jiveon.com/api/core/v3/contents/43424";*/
-
-var  checkedItemsArray = new Array();
-var uncheckItemArray = new Array();
-
-var checkItemArrayUpdated = new Array();
-var uncheckedItemArrayUpdated = new Array();
-
- 
-
-function filterCheckedUncheckTagUrl(){
-	
-     
-	  
-	  alert("hi filter");
-	  var checkedIndex = 0;
-	  var uncheckedIndex = 0;
-        var val = [];
-        $(':checkbox').each(function(i){
-			
-		 val[i] = $(this).val();
-		 alert(val[i]);
-		 if(val[i] != 'on'){
-		 if($(this).is(':checked')){
-		 alert("true");
-			checkedItemsArray[checkedIndex] = $(this).val();
-			checkedIndex++;
-		 }
-		 else {
-				 alert("false");
-			uncheckItemArray[uncheckedIndex] = $(this).val();
-			uncheckedIndex++;
-		}
-		}
-		
-	
-	    });
-			/*Print the checked and the unchecked*/
-			alert("checkedItemsArray .length = "+checkedItemsArray.length);
-		for(var index=0; index < checkedItemsArray.length;index++) {
-			alert("checked items : "+checkedItemsArray[index]);
-		}
-		alert("uncheckItemArray .length = "+uncheckItemArray.length);
-		for(var index=0;index < uncheckItemArray.length;index++) {
-			alert("unchecked items : "+uncheckItemArray[index]);
-		}
-		
-		/*Filter the the list */
-		var checkedIndex = 0;
-		var uncheckedIndex = 0;
-		for(var outerIndex=0;outerIndex < checkedItemsArray.length;outerIndex++) {
-			for(var innerIndex=0;innerIndex< mainCheckedItems.length;innerIndex++) {
-				//alert("checkedItemsArray[outerIndex] = mainCheckedItems[innerIndex] :" +checkedItemsArray[outerIndex] == mainCheckedItems[innerIndex]);
-				//alert("checkedItemsArray[outerIndex] = mainCheckedItems[innerIndex] :" +checkedItemsArray[outerIndex] == mainCheckedItems[innerIndex]);
-				if(checkedItemsArray[outerIndex] == mainCheckedItems[innerIndex]) {
-					break;
-				}
-				else {
-					if(innerIndex == (mainCheckedItems.length - 1)) {
-					checkItemArrayUpdated[checkedIndex] = checkedItemsArray[outerIndex];
-					checkedIndex++;
-					}
-					
-				}
-			}
-		}
-		
-		for(var index=0; index < checkItemArrayUpdated.length;index++) {
-			alert("new checked items : "+checkItemArrayUpdated[index]);
-			console.log("new checked items : "+checkItemArrayUpdated[index]);
-		}
-		
-		for(var outerIndex=0;outerIndex < uncheckItemArray.length;outerIndex++) {
-			for(var innerIndex=0;innerIndex< mainUncheckItems.length;innerIndex++) {
-				//alert("checkedItemsArray[outerIndex] = mainCheckedItems[innerIndex] :" +checkedItemsArray[outerIndex] == mainCheckedItems[innerIndex]);
-				if(uncheckItemArray[outerIndex] == mainUncheckItems[innerIndex]) {
-					break;
-				}
-				else {
-					if(innerIndex == (mainUncheckItems.length - 1)) {
-					uncheckedItemArrayUpdated[uncheckedIndex] = uncheckItemArray[outerIndex];
-					uncheckedIndex++;
-					}
-					
-				}
-			}
-		}
-		
-		for(var index=0;index < uncheckedItemArrayUpdated.length;index++) {
-			alert("new unchecked items : "+uncheckedItemArrayUpdated[index]);
-				console.log("new unchecked items : "+uncheckedItemArrayUpdated[index]);
-		}
-		
-		
-
-		
-		}
-		
-	function filterCheckedUncheckTagUrl1(){
-
-
-	
-	var contentTypeCheckBoxIdArray = new Array();
-
-              contentTypeCheckBoxIdArray[0] = '#filesTable input[type=checkbox]';
-                  contentTypeCheckBoxIdArray[1] = '#docsTable input[type=checkbox]';
-                  contentTypeCheckBoxIdArray[2] = '#ideaTable input[type=checkbox]';
-                  contentTypeCheckBoxIdArray[3] = '#pollTable input[type=checkbox]';
-                  contentTypeCheckBoxIdArray[4] = '#blogTable input[type=checkbox]';
-                  contentTypeCheckBoxIdArray[5] = '#discTable input[type=checkbox]';
-
-
-                  var checkedIndex = 0;
-                  var uncheckedIndex = 0;
-        var val = [];
-                                for(index =0;index <  contentTypeCheckBoxIdArray.length;index++) {
-        //$('#filesTable input[type=checkbox]').each(function(i){
-                                $(contentTypeCheckBoxIdArray[index]).each(function(i){
-                                                
-                                val[i] = $(this).val();
-                                // alert(val[i]);
-                                if(val[i] != 'on'){
-                                if($(this).is(':checked')){
-                                //alert("true");
-                                                checkedItemsArray[checkedIndex] = $(this).val();
-                                                checkedIndex++;
-                                }
-                                else {
-                                                                // alert("false");
-                                                uncheckItemArray[uncheckedIndex] = $(this).val();
-                                                uncheckedIndex++;
-                                }
-                                }
-                                
-                
-                    });
-                                
-                                }
-									
-	for(var index=0; index < checkedItemsArray.length;index++) {
-      //alert("new checked items : "+checkedItemsArray[index]);
-      console.log("new checked items : "+checkedItemsArray[index]);
-    }
-  for(var index=0;index < uncheckedItemArrayUpdated.length;index++) {
-      //alert("new unchecked items : "+uncheckedItemArrayUpdated[index]);
-      console.log("new unchecked items : "+uncheckedItemArrayUpdated[index]);
-    }
-
-                                //alert("checkedItemsArray.length = "+checkedItemsArray.length);
-                                //console.log("checkedItemsArray.length = "+checkedItemsArray.length);
-                                //alert("uncheckItemArray.length = "+uncheckItemArray.length);
-                                //console.log("uncheckItemArray.length = "+uncheckItemArray.length);
-				catIndex = 0;
-				dotIndex = 0;
-		        updateTagsForNewContents1();
-		
-		}
-
-	  
-function updateTagsForNewContents() {
-	/*alert("Into the updateCategories for new contents");
-	console.log("Into the updateCategories for new contents");
-	for(var index=0; index < checkItemArrayUpdated.length;index++) {
-			alert("new checked items : "+checkItemArrayUpdated[index]);
-			console.log("new checked items : "+checkItemArrayUpdated[index]);
-		}
-	for(var index=0;index < uncheckedItemArrayUpdated.length;index++) {
-			alert("new unchecked items : "+uncheckedItemArrayUpdated[index]);
-				console.log("new unchecked items : "+uncheckedItemArrayUpdated[index]);
-		}
-
-		alert("checkItemArrayUpdated.length = "+checkItemArrayUpdated.length+" catIndex ="+catIndex);
-	console.log("checkItemArrayUpdated.length = "+checkItemArrayUpdated.length+" catIndex="+catIndex);*/
-		
-if(catIndex < checkItemArrayUpdated.length) {
-
-	var contentURL = checkItemArrayUpdated[catIndex];
-	var toUpdateTags;
-	var toTagsArray;
-	var updatedTagList = new Array();
-	
-	//alert("contentURL got is ="+contentURL);
-	console.log("contentURL got is ="+contentURL);
-	osapi.jive.corev3.contents.get({
-	fields: '@all',	
-	uri: contentURL
-	}).execute(function(contentCatResponseObj){
-				//alert(JSON.stringify(contentCatResponseObj));
-				console.log(JSON.stringify(contentCatResponseObj));
-				
-					//alert(contentCatResponseObj.tags);
-					//alert("selected_cat = "+selected_cat);
-				toUpdateTags = contentCatResponseObj.tags;
-				//toUpdateTags = toUpdateTags+','+selected_cat;
-				//toUpdateTags = ["cat1","cat2","cat3"];
-				//toTagsArray = toUpdateTags.split(",");
-				var tempIndex =0;
-				for(var index=0;index < toUpdateTags.length;index++,tempIndex++) {
-						alert("---cc-"+toUpdateTags[index]);
-						console.log("---cc-"+toUpdateTags[index]);
-						updatedTagList[tempIndex]=toUpdateTags[index];
-				}
-					updatedTagList[tempIndex]=selected_cat;
-				//toUpdateTags = selected_cat;
-				//alert("toUpdateTags = "+toUpdateTags);
-				console.log("toUpdateTags = "+toUpdateTags);
-				//contentCatResponseObj.tags = toUpdateTags;
-				contentCatResponseObj.tags = updatedTagList;
-				contentCatResponseObj.update().execute(function(catUpdateResponse){
-				//alert(JSON.stringify(catUpdateResponse));
-				console.log(JSON.stringify(catUpdateResponse));
-				});
-				catIndex++;
-				updateTagsForNewContents();
-				
-			});
-
-}
-else {
-catIndex = 0;
-removeTagsForContents();
-}
-
-}
-
-function updateTagsForNewContents1() {
-	//alert("Into the updateCategories for new contents");
-	console.log("Into the updateCategories for new contents");
-	for(var index=0; index < checkedItemsArray.length;index++) {
-			//alert("new checked items : "+checkedItemsArray[index]);
-			//console.log("new checked items : "+checkedItemsArray[index]);
-		}
-	for(var index=0;index < uncheckedItemArrayUpdated.length;index++) {
-			//alert("new unchecked items : "+uncheckedItemArrayUpdated[index]);
-			//	console.log("new unchecked items : "+uncheckedItemArrayUpdated[index]);
-		}
-
-		//alert("checkItemArrayUpdated.length = "+uncheckItemArray.length+" catIndex ="+catIndex);
-	//console.log("checkItemArrayUpdated.length = "+uncheckItemArray.length+" catIndex="+catIndex);
-		
-if(catIndex < checkedItemsArray.length) {
-
-	var contentURL = checkedItemsArray[catIndex];
-	var toUpdateTags;
-	var toTagsArray;
-	var updatedTagList = new Array();
-	var isTagExisting =false;
-	
-	//alert("contentURL got is ="+contentURL);
-	console.log("contentURL got is ="+contentURL);
-	alert("contentURL="+contentURL);
-	
-	if(contentURL != 'undefined')
-	{
-	osapi.jive.corev3.contents.get({
-	fields: '@all',	
-	uri: contentURL
-	}).execute(function(contentCatResponseObj){
-				//alert(JSON.stringify(contentCatResponseObj));
-				//console.log(JSON.stringify(contentCatResponseObj));
-				
-					//console.log(contentCatResponseObj.tags);
-					//alert("selected_cat = "+selected_cat);
-				toUpdateTags = contentCatResponseObj.tags;
-				var str='Applying category '+selected_cat+' to '+contentCatResponseObj.type+'';
-				for(index =0;index < dotIndex;index++) 
-					str = str +'.';
-					dotIndex++;
-				if(dotIndex == 4) dotIndex = 0;
-				document.getElementById("frame1").contentDocument.body.innerHTML = "Applying tags in Progress.<br>Please leave this window open until the updating process has been completed.<br><br><span id='mySpan' style='font-weight:bold;'>"+str.fontcolor("#3778C7")+"</span>";
-
-				var tempIndex =0;
-				for(var index=0;index < toUpdateTags.length;index++,tempIndex++) {
-						//alert("---cc-"+toUpdateTags[index]);
-						//console.log("---cc-"+toUpdateTags[index]);
-						updatedTagList[tempIndex]=toUpdateTags[index];
-						if(toUpdateTags[index] == selected_tag) {
-						isTagExisting = true;
-						}
-						
-						
-				}
-			//	alert("isTagExisting = "+isTagExisting);
-					if(!isTagExisting){
-						updatedTagList[tempIndex]=selected_tag;
-						isTagExisting = false;
-					}
-					
-				for(var index=0;index < updatedTagList.length;index++,tempIndex++) {
-					//console.log("VVVV-- "+updatedTagList[index]);
-				}
-				
-				//console.log("toUpdateTags = "+toUpdateTags);
-				
-				contentCatResponseObj.tags = updatedTagList;
-				                
-				contentCatResponseObj.update().execute(function(catUpdateResponse){
-				
-				//console.log("updated --"+JSON.stringify(catUpdateResponse));
-				
-				if (catUpdateResponse.error){
-        errorReferenceCatArray[referenceCatArrayIndex] = contentCatResponseObj.resources.html.ref;
-        referenceCatArrayIndex++;
-        
-        }
-
-				
-				});
-				catIndex++;
-				updateTagsForNewContents1();
-				
-			});
-			}
-
-}
-else {
-catIndex = 0;
-dotIndex=0;
-removeTagsForContents();
-}
-
-}
-
-function removeTagsForContents() {
-	
-		
-if(catIndex < uncheckItemArray.length) {
-
-	var contentURL = uncheckItemArray[catIndex];
-	var toUpdateTags;
-	var toTagsArray;
-	var updatedCategoryList = new Array();
-	
-	//alert("contentURL got is ="+contentURL);
-	console.log("contentURL got is ="+contentURL);
-	osapi.jive.corev3.contents.get({
-	fields: '@all',	
-	uri: contentURL
-	}).execute(function(contentCatResponseObj){
-				//alert(JSON.stringify(contentCatResponseObj));
-				console.log(JSON.stringify(contentCatResponseObj));
-				
-					//alert(contentCatResponseObj.categories);
-					//alert("selected_cat = "+selected_cat);
-				var str='Removing category '+selected_cat+' to '+contentCatResponseObj.type+'';
-				for(index =0;index < dotIndex;index++) 
-					str = str +'.';
-					dotIndex++;
-				if(dotIndex == 4) dotIndex = 0;
-				document.getElementById("frame1").contentDocument.body.innerHTML = "Removing tags in Progress.<br>Please leave this window open until the updating process has been completed.<br><br><span id='mySpan' style='font-weight:bold;'>"+str.fontcolor("#3778C7")+"</span>";
-
-				toUpdateTags = contentCatResponseObj.tags;
-				//toUpdateTags = toUpdateTags+','+selected_cat;
-				//toUpdateTags = ["cat1","cat2","cat3"];
-				//toTagsArray = toUpdateTags.split(",");
-				var tempIndex =0;
-				for(var index=0;index < toUpdateTags.length;index++) {
-						if(selected_cat != toUpdateTags[index]){
-						//	alert("---cc-"+toUpdateTags[index]);
-							console.log("---cc-"+toUpdateTags[index]);
-							updatedCategoryList[tempIndex]=toUpdateTags[index];
-							tempIndex++;
-						}
-				}
-				
-				//toUpdateTags = selected_cat;
-				//alert("toUpdateTags = "+toUpdateTags);
-				console.log("toUpdateTags = "+toUpdateTags);
-				//contentCatResponseObj.categories = toUpdateTags;
-				contentCatResponseObj.tags = updatedCategoryList;
-				contentCatResponseObj.update().execute(function(catUpdateResponse){
-				//alert(JSON.stringify(catUpdateResponse));
-				console.log("UPDated -- "+JSON.stringify(catUpdateResponse));
-				});
-				catIndex++;
-				removeTagsForContents();
-				
-			});
-
-}
-else {
-
-			alert("inside else ");
-			$("#src_place").show();
-			$("#tag_place").show();
-			$('#tag_place').css("margin-top", "-235px");
-			$('#tag_place').css("margin-left", "250px");
-			$("#tag_from_space").show();
-			$("#tag_from_group").hide();
-			$("#tag_from_project").hide();
-			$('#selTag').css("margin-top", "-200px");
-			$('#selTag').css("margin-left", "200px");
-			$("#selTag").show();
-			$('#tag_sel').css("margin-top", "-190px");
-			$('#tag_sel').css("margin-left", "250px");
-			$("#tag_sel").show();
-			$('#add_tag_button').css("margin-top", "-190px");
-			$('#add_tag_button').css("margin-left", "390px");
-			$("#add_tag_button").show();
-
-            for(var index = 0;index < errorReferenceCatArray.length;index++) {
-              console.log("Could Not Reference "+errorReferenceCatArray[index]);
-            } 
-
-            for(var index = 0;index < errorDeReferenceCatArray.length;index++) {
-              console.log("Could Not De-Reference "+errorDeReferenceCatArray[index]);
-            }  
-	console.log("tag "+selected_cat+" succesfully updated");
-		//alert("Category "+selected_cat+" succesfully updated");
-		var tempRedirectionUrl = source_html_url+'/content?filterID=contentstatus[published]~tag['+selected_cat+']';
-		
-		console.log("temRedirectionUrl = "+tempRedirectionUrl);
-		/*$("#stylized").fadeOut(5000,function(){
-		window.location = window.location = tempRedirectionUrl;
-			});*/
-			
-		/*document.getElementById("frame1").contentDocument.body.innerHTML = "Updating is in Progress.<br>Please leave this window open until the updating process has been completed.<br><br><span id='mySpan' style='font-weight:bold;'>"+"'Moving completed. Please click   <a href='+tempRedirectionUrl+'>here </a>  for the new location of your content.'.fontcolor("#3778C7")+"</span>";*/
-		var str='Updating tags is completed. Please click   <a href='+tempRedirectionUrl+'>here </a>  for the new location of your content.';
-		document.getElementById("frame1").contentDocument.body.innerHTML = "Note.<br><br><span id='mySpan' style='font-weight:bold;'>"+str.fontcolor("#3778C7")+"</span>";
-		
-		
-}
-
-
-
-}
-	
-	
-
-//**********************End of the code for tags*******************
 function getFiles(space_url)
 {
 // fetches the files from the selected space/group/project using the SPACE_URL.
@@ -3270,18 +1647,6 @@ files_row='<table id="filesTable" border="0" class="jiveBorder" jive-data-cell="
 else
 {
 // action when the selected space/group/project has files.
-if (sel_action_val=='categs')
-{
-var header='Category';
-}
-else if (sel_action_val=='tags')
-{
-var header='Tags';
-}
-else
-{
-var header='Author';
-}
 
 // creates table header row.
 files_row='<table id="filesTable" border="0" class="jiveBorder" jive-data-cell="{&quot;color&quot;:&quot;#575757&quot;,&quot;textAlign&quot;:&quot;left&quot;,&quot;padding&quot;:&quot;2&quot;,&quot;backgroundColor&quot;:&quot;transparent&quot;,&quot;fontFamily&quot;:&quot;arial,helvetica,sans-serif&quot;,&quot;verticalAlign&quot;:&quot;baseline&quot;}" jive-data-header="{&quot;color&quot;:&quot;#FFFFFF&quot;,&quot;backgroundColor&quot;:&quot;#6690BC&quot;,&quot;textAlign&quot;:&quot;left&quot;,&quot;padding&quot;:&quot;2&quot;,&quot;fontFamily&quot;:&quot;arial,helvetica,sans-serif&quot;,&quot;verticalAlign&quot;:&quot;baseline&quot;}" style="border: 1px solid #000000; width: 450px;">'+
@@ -3289,7 +1654,7 @@ files_row='<table id="filesTable" border="0" class="jiveBorder" jive-data-cell="
 '<tr>'+
 '<td style="border:1px ;border: 1px solid #000000;width: 60px;padding: 2px;color: #ffffff;background-color: #6690bc;text-align: right;" valign="middle"><strong>'+'All<input type="checkbox" id="sel_all_files"  onclick="javascript:checkedAll(this.id);">'+'</strong></td>'+
 '<td style="border:1px ;border: 1px solid #000000;width: 450px;padding: 2px;color: #ffffff;background-color: #6690bc;text-align: left;" valign="middle"><strong>&nbsp; Title</strong></td>'+
-'<td style="border:1px solid ;border: 1px solid #000000;width: 160px;padding: 2px;color: #ffffff;background-color: #6690bc;text-align: left;" valign="middle"><strong>&nbsp; '+header+'</strong></td>'+
+'<td style="border:1px solid ;border: 1px solid #000000;width: 160px;padding: 2px;color: #ffffff;background-color: #6690bc;text-align: left;" valign="middle"><strong>&nbsp; Author</strong></td>'+
 '</tr>';
 
 
@@ -3298,9 +1663,7 @@ postFiles = {
 title : "",
 author : "",
 updated : "",
-fileUrl : "",
-category: "",
-tags: ""
+fileUrl : ""
 }
 
 // assigning values from the received response to the variables.
@@ -3308,79 +1671,13 @@ postFiles.title = group.subject;
 postFiles.author = group.author.name.formatted;
 postFiles.updated = group.updated;
 postFiles.fileUrl = group.resources.self.ref;
-postFiles.category = group.categories;
-postFiles.tags = group.tags;
 
 // adding each file in a row as per the received response.
-if (sel_action_val=='categs')
-{
-var categg1=postFiles.category;
-
-files_row = files_row + '<tr>'+
-'<td style="border:1px ;border: 1px solid #000000;text-align:right;padding:2px;">'+'<input type="checkbox" id="file_cb'+index+'" name="file_cb" class="file_cb" onclick="javascript:checkUncheck(this.name);" value="'+postFiles.fileUrl+'">'+'</td>'+
-'<td style="border:1px ;border: 1px solid #000000;padding: 2px;">'+postFiles.title+'</td>'+
-'<td style="border:1px ;border: 1px solid #000000;padding: 2px;">'+postFiles.category+'</td>'+
-'</tr>';
-var checkFlagItem = false;
-for(var ind=0;ind<categg1.length;ind++)
-{
-if (categg1[ind]==selected_cat)
-{
-console.log("categg1= "+categg1);
-console.log("selected_cat= "+selected_cat);
-console.log(document.getElementById("file_cb"+index).value);
-var temp_id="file_cb"+index;
-console.log("temp_id= "+temp_id);
-addId[arrayIndex]=temp_id;
-console.log("Array val: "+addId[arrayIndex]);
-arrayIndex++;
-}
-}
-}
-else if (sel_action_val=='tags')
-{
-var tags=postFiles.tags;
-console.log("tags: "+tags);
-files_row = files_row + '<tr>'+
-'<td style="border:1px ;border: 1px solid #000000;text-align:right;padding:2px;">'+'<input type="checkbox" id="file_cb'+index+'" name="file_cb" class="file_cb" onclick="javascript:checkUncheck(this.name);" value="'+postFiles.fileUrl+'">'+'</td>'+
-'<td style="border:1px ;border: 1px solid #000000;padding: 2px;">'+postFiles.title+'</td>'+
-'<td style="border:1px ;border: 1px solid #000000;padding: 2px;">'+postFiles.tags+'</td>'+
-'</tr>';
-
-for(var ind=0;ind<tags.length;ind++)
-{
-if (tags[ind]==selected_tag)
-{
-console.log("tags= "+tags);
-console.log("selected_tag= "+selected_tag);
-console.log(document.getElementById("file_cb"+index).value);
-var temp_id="file_cb"+index;
-console.log("temp_id= "+temp_id);
-addId[arrayIndex]=temp_id;
-console.log("Array val: "+addId[arrayIndex]);
-arrayIndex++;
-if(catSelection) {
-	mainCheckedItems[contentCheckedIndex] = document.getElementById("file_cb"+index).value;
-	contentCheckedIndex++;
-	checkFlagItem = true;
-	break;
-}
-}
-}
-if(catSelection && !checkFlagItem) {
-		mainUncheckItems[contentUnCheckedIndex] = document.getElementById("file_cb"+index).value;
-		contentUnCheckedIndex++;
-}
-}
-else
-{
 files_row = files_row + '<tr>'+
 '<td style="border:1px ;border: 1px solid #000000;text-align:right;padding:2px;">'+'<input type="checkbox" name="file_cb" class="file_cb" onclick="javascript:checkUncheck(this.name);" value="'+postFiles.fileUrl+'">'+'</td>'+
 '<td style="border:1px ;border: 1px solid #000000;padding: 2px;">'+postFiles.title+'</td>'+
 '<td style="border:1px ;border: 1px solid #000000;padding: 2px;">'+postFiles.author+'</td>'+
-'</tr>';
-}
-		
+'</tr>';		
 });
 }
 files_row=files_row+'</table>';	
@@ -3415,24 +1712,13 @@ blog_row='<table id="blogTable" border="0" class="jiveBorder" jive-data-cell="{&
 else
 {	
 // action when the selected space/group/project has blogs.
-if (sel_action_val=='categs')
-{
-var header='Category';
-}
-else if (sel_action_val=='tags')
-{
-var header='Tags';
-}
-else
-{
-var header='Author';
-}
+
 // adding the header for blogs table.
 blog_row='<table id="blogTable" border="0" class="jiveBorder" jive-data-cell="{&quot;color&quot;:&quot;#575757&quot;,&quot;textAlign&quot;:&quot;left&quot;,&quot;padding&quot;:&quot;2&quot;,&quot;backgroundColor&quot;:&quot;transparent&quot;,&quot;fontFamily&quot;:&quot;arial,helvetica,sans-serif&quot;,&quot;verticalAlign&quot;:&quot;baseline&quot;}" jive-data-header="{&quot;color&quot;:&quot;#FFFFFF&quot;,&quot;backgroundColor&quot;:&quot;#6690BC&quot;,&quot;textAlign&quot;:&quot;left&quot;,&quot;padding&quot;:&quot;2&quot;,&quot;fontFamily&quot;:&quot;arial,helvetica,sans-serif&quot;,&quot;verticalAlign&quot;:&quot;baseline&quot;}" style="border: 1px solid #000000; width: 450px;">'+
 '<tr>'+
 '<td style="border:1px solid black;border: 1px solid #000000;width: 60px;padding: 2px;color: #ffffff;background-color: #6690bc;text-align: right;" valign="middle"><strong>'+'All<input type="checkbox" id="sel_all_blogs"  onclick="javascript:checkedAll(this.id);">'+'</strong></th>'+
 '<td style="border:1px solid black;border: 1px solid #000000;width: 450px;padding: 2px;color: #ffffff;background-color: #6690bc;text-align: left;" valign="middle"><strong>&nbsp; Title</strong></th>'+
-'<td style="border:1px solid black;border: 1px solid #000000;width: 160px;padding: 2px;color: #ffffff;background-color: #6690bc;text-align: left;" valign="middle"><strong>&nbsp; '+header+'</strong></th>'+
+'<td style="border:1px solid black;border: 1px solid #000000;width: 160px;padding: 2px;color: #ffffff;background-color: #6690bc;text-align: left;" valign="middle"><strong>&nbsp; Author</strong></th>'+
 '</tr>';
 
 $.each(blogs, function(index, group) {
@@ -3440,9 +1726,7 @@ postBlogs = {
 title : "",
 author : "",
 updated : "",
-fileUrl : "",
-category:"",
-tags:""
+fileUrl : ""
 }
 
 // assigning values from received response to the variables.
@@ -3450,81 +1734,13 @@ postBlogs.title = group.subject;
 postBlogs.author = group.author.name.formatted;
 postBlogs.updated = group.updated;
 postBlogs.fileUrl = group.resources.self.ref;
-postBlogs.category = group.categories;
-postBlogs.tags = group.tags;
-
 
 // adding each blog in a row as per the received response.
-if (sel_action_val=='categs')
-{
-blog_row = blog_row + '<tr>'+
-'<td style="border:1px solid black;border: 1px solid #000000;text-align: right;padding: 2px;">'+'<input type="checkbox" id="blog_cb'+index+'" name="blog_cb" class="blog_cb" onclick="javascript:checkUncheck(this.name);" value="'+postBlogs.fileUrl+'">'+'</td>'+
-'<td style="border:1px solid black;border: 1px solid #000000;padding: 2px;">'+postBlogs.title+'</td>'+
-'<td style="border:1px solid black;border: 1px solid #000000;padding: 2px;">'+postBlogs.category+'</td>'+
-'</tr>';	
-
-var categg2=postBlogs.category;
-var checkFlagItem = false;
-
-for(var ind=0;ind<categg2.length;ind++)
-{
-if (categg2[ind]==selected_cat)
-{
-console.log("categg2= "+categg2);
-console.log("selected_cat= "+selected_cat);
-console.log(document.getElementById("blog_cb"+index).value);
-var temp_id="blog_cb"+index;
-console.log("temp_id= "+temp_id);
-addId[arrayIndex]=temp_id;
-console.log("Array val: "+addId[arrayIndex]);
-arrayIndex++;
-if(catSelection) {
-	mainCheckedItems[contentCheckedIndex] = document.getElementById("blog_cb"+index).value;
-	contentCheckedIndex++;
-	checkFlagItem = true;
-	break;
-}
-}
-}
-if(catSelection && !checkFlagItem) {
-		mainUncheckItems[contentUnCheckedIndex] = document.getElementById("blog_cb"+index).value;
-		contentUnCheckedIndex++;
-}
-}
-
-else if (sel_action_val=='tags')
-{
-var tags=postBlogs.tags;
-console.log("tags: "+tags);
-blog_row = blog_row + '<tr>'+
-'<td style="border:1px solid black;border: 1px solid #000000;text-align: right;padding: 2px;">'+'<input type="checkbox" id="blog_cb'+index+'" name="blog_cb" class="blog_cb" onclick="javascript:checkUncheck(this.name);" value="'+postBlogs.fileUrl+'">'+'</td>'+
-'<td style="border:1px solid black;border: 1px solid #000000;padding: 2px;">'+postBlogs.title+'</td>'+
-'<td style="border:1px solid black;border: 1px solid #000000;padding: 2px;">'+postBlogs.tags+'</td>'+
-'</tr>';
-
-for(var ind=0;ind<tags.length;ind++)
-{
-if (tags[ind]==selected_tag)
-{
-console.log("tags= "+tags);
-console.log("selected_tag= "+selected_tag);
-console.log(document.getElementById("blog_cb"+index).value);
-var temp_id="blog_cb"+index;
-console.log("temp_id= "+temp_id);
-addId[arrayIndex]=temp_id;
-console.log("Array val: "+addId[arrayIndex]);
-arrayIndex++;
-}
-}
-}
-else
-{
 blog_row = blog_row + '<tr>'+
 '<td style="border:1px solid black;border: 1px solid #000000;text-align: right;padding: 2px;">'+'<input type="checkbox" name="blog_cb" class="blog_cb" onclick="javascript:checkUncheck(this.name);" value="'+postBlogs.fileUrl+'">'+'</td>'+
 '<td style="border:1px solid black;border: 1px solid #000000;padding: 2px;">'+postBlogs.title+'</td>'+
 '<td style="border:1px solid black;border: 1px solid #000000;padding: 2px;">'+postBlogs.author+'</td>'+
 '</tr>';	
-}
 });
 }
 blog_row=blog_row+'</table>';	
@@ -3534,6 +1750,7 @@ document.getElementById("blog_div").innerHTML=blog_row;
 
 });
 };
+
 
 function getDocs(space_url)
 {
@@ -3555,25 +1772,12 @@ docs_row='<table id="docsTable" border="0" class="jiveBorder" jive-data-cell="{&
 }
 else
 {	
-if (sel_action_val=='categs')
-{
-var header='Category';
-}
-else if (sel_action_val=='tags')
-{
-var header='Tags';
-}
-else
-{
-var header='Author';
-}
-
 docs_row='<table id="docsTable" border="0" class="jiveBorder" jive-data-cell="{&quot;color&quot;:&quot;#575757&quot;,&quot;textAlign&quot;:&quot;left&quot;,&quot;padding&quot;:&quot;2&quot;,&quot;backgroundColor&quot;:&quot;transparent&quot;,&quot;fontFamily&quot;:&quot;arial,helvetica,sans-serif&quot;,&quot;verticalAlign&quot;:&quot;baseline&quot;}" jive-data-header="{&quot;color&quot;:&quot;#FFFFFF&quot;,&quot;backgroundColor&quot;:&quot;#6690BC&quot;,&quot;textAlign&quot;:&quot;left&quot;,&quot;padding&quot;:&quot;2&quot;,&quot;fontFamily&quot;:&quot;arial,helvetica,sans-serif&quot;,&quot;verticalAlign&quot;:&quot;baseline&quot;}" style="border: 1px solid #000000; width: 450px;">'+
 
 '<tr>'+
 '<td style="border:1px solid black;border: 1px solid #000000;width: 60px;padding: 2px;color: #ffffff;background-color: #6690bc;text-align: right;" valign="middle"><strong>'+'All<input type="checkbox" id="sel_all_docs" onclick="javascript:checkedAll(this.id);">'+'</strong></th>'+
 '<td style="border:1px solid black;border: 1px solid #000000;width: 450px;padding: 2px;color: #ffffff;background-color: #6690bc;text-align: left;" valign="middle"><strong>&nbsp; Title</strong></th>'+
-'<td style="border:1px solid black;border: 1px solid #000000;width: 160px;padding: 2px;color: #ffffff;background-color: #6690bc;text-align: left;" valign="middle"><strong>&nbsp; '+header+'</strong></th>'+
+'<td style="border:1px solid black;border: 1px solid #000000;width: 160px;padding: 2px;color: #ffffff;background-color: #6690bc;text-align: left;" valign="middle"><strong>&nbsp; Author</strong></th>'+
 '</tr>';
 
 $.each(documents, function(index, group) {
@@ -3581,89 +1785,19 @@ postDoc = {
 title : "",
 author : "",
 updated : "",
-docUrl : "",
-category: "",
-tags: ""
+docUrl : ""
 }
 
 postDoc.title = group.subject;
 postDoc.author = group.author.name.formatted;
 postDoc.updated = group.updated;
 postDoc.docUrl = group.resources.self.ref;
-postDoc.category = group.categories;
-postDoc.tags = group.tags;
 
-if (sel_action_val=='categs')
-{
-docs_row = docs_row + '<tr>'+
-'<td style="border:1px solid black;border: 1px solid #000000;text-align: right;padding: 2px;">'+'<input type="checkbox" id="doc_cb'+index+'" name="doc_cb" class="doc_cb" onclick="javascript:checkUncheck(this.name);" value="'+postDoc.docUrl+'">'+'</td>'+
-'<td style="border:1px solid black;border: 1px solid #000000;padding: 2px;">'+postDoc.title+'</td>'+
-'<td style="border:1px solid black;border: 1px solid #000000;padding: 2px;">'+postDoc.category+'</td>'+
-'</tr>';
-
-var categg3=postDoc.category;
-var checkFlagItem = false;
-
-for(var ind=0;ind<categg3.length;ind++)
-{
-if (categg3[ind]==selected_cat)
-{
-console.log("categg3= "+categg3);
-console.log("selected_cat= "+selected_cat);
-console.log(document.getElementById("doc_cb"+index).value);
-var temp_id="doc_cb"+index;
-console.log("temp_id= "+temp_id);
-addId[arrayIndex]=temp_id;
-console.log("Array val: "+addId[arrayIndex]);
-arrayIndex++;
-if(catSelection) {
-	mainCheckedItems[contentCheckedIndex] = document.getElementById("doc_cb"+index).value;
-	contentCheckedIndex++;
-	checkFlagItem = true;
-	break;
-}
-}
-}
-if(catSelection && !checkFlagItem) {
-		mainUncheckItems[contentUnCheckedIndex] = document.getElementById("doc_cb"+index).value;
-		contentUnCheckedIndex++;
-}
-}
-else if (sel_action_val=='tags')
-{
-var tags=postDoc.tags;
-console.log("tags: "+tags);
-docs_row = docs_row + '<tr>'+
-'<td style="border:1px solid black;border: 1px solid #000000;text-align: right;padding: 2px;">'+'<input type="checkbox" id="doc_cb'+index+'" name="doc_cb" class="doc_cb" onclick="javascript:checkUncheck(this.name);" value="'+postDoc.docUrl+'">'+'</td>'+
-'<td style="border:1px solid black;border: 1px solid #000000;padding: 2px;">'+postDoc.title+'</td>'+
-'<td style="border:1px solid black;border: 1px solid #000000;padding: 2px;">'+postDoc.tags+'</td>'+
-'</tr>';
-
-for(var ind=0;ind<tags.length;ind++)
-{
-if (tags[ind]==selected_tag)
-{
-console.log("tags= "+tags);
-console.log("selected_tag= "+selected_tag);
-console.log(document.getElementById("doc_cb"+index).value);
-var temp_id="doc_cb"+index;
-console.log("temp_id= "+temp_id);
-addId[arrayIndex]=temp_id;
-console.log("Array val: "+addId[arrayIndex]);
-arrayIndex++;
-}
-}
-}
-else
-{
 docs_row = docs_row + '<tr>'+
 '<td style="border:1px solid black;border: 1px solid #000000;text-align: right;padding: 2px;">'+'<input type="checkbox" name="doc_cb" class="doc_cb" onclick="javascript:checkUncheck(this.name);" value="'+postDoc.docUrl+'">'+'</td>'+
 '<td style="border:1px solid black;border: 1px solid #000000;padding: 2px;">'+postDoc.title+'</td>'+
 '<td style="border:1px solid black;border: 1px solid #000000;padding: 2px;">'+postDoc.author+'</td>'+
 '</tr>';
-}
-
-
 
 });	
 }	
@@ -3691,25 +1825,12 @@ disc_row='<table id="discTable" border="0" class="jiveBorder" jive-data-cell="{&
 }
 else
 {
-if (sel_action_val=='categs')
-{
-var header='Category';
-}
-else if (sel_action_val=='tags')
-{
-var header='Tags';
-}
-else
-{
-var header='Author';
-}
-
 disc_row='<table id="discTable" border="0" class="jiveBorder" jive-data-cell="{&quot;color&quot;:&quot;#575757&quot;,&quot;textAlign&quot;:&quot;left&quot;,&quot;padding&quot;:&quot;2&quot;,&quot;backgroundColor&quot;:&quot;transparent&quot;,&quot;fontFamily&quot;:&quot;arial,helvetica,sans-serif&quot;,&quot;verticalAlign&quot;:&quot;baseline&quot;}" jive-data-header="{&quot;color&quot;:&quot;#FFFFFF&quot;,&quot;backgroundColor&quot;:&quot;#6690BC&quot;,&quot;textAlign&quot;:&quot;left&quot;,&quot;padding&quot;:&quot;2&quot;,&quot;fontFamily&quot;:&quot;arial,helvetica,sans-serif&quot;,&quot;verticalAlign&quot;:&quot;baseline&quot;}" style="border: 1px solid #000000; width: 450px;">'+
 
 '<tr>'+
 '<td style="border:1px solid black;border: 1px solid #000000;width: 60px;padding: 2px;color: #ffffff;background-color: #6690bc;text-align: right;" valign="middle"><strong>'+'All<input type="checkbox" id="sel_all_disc"  onclick="javascript:checkedAll(this.id);">'+'</strong></th>'+
 '<td style="border:1px solid black;border: 1px solid #000000;width: 450px;padding: 2px;color: #ffffff;background-color: #6690bc;text-align: left;" valign="middle"><strong>&nbsp; Title</strong></th>'+
-'<td style="border:1px solid black;border: 1px solid #000000;width: 160px;padding: 2px;color: #ffffff;background-color: #6690bc;text-align: left;" valign="middle"><strong>&nbsp; '+header+'</strong></th>'+
+'<td style="border:1px solid black;border: 1px solid #000000;width: 160px;padding: 2px;color: #ffffff;background-color: #6690bc;text-align: left;" valign="middle"><strong>&nbsp; Author</strong></th>'+
 '</tr>';
 
 $.each(disc, function(index, group) {
@@ -3717,88 +1838,19 @@ postDisc = {
 title : "",
 author : "",
 updated : "",
-discUrl : "",
-category : "",
-tags: ""
+discUrl : ""
 }
 
 postDisc.title = group.subject;
 postDisc.author = group.author.name.formatted;
 postDisc.updated = group.updated;
 postDisc.discUrl = group.resources.self.ref;
-postDisc.category = group.categories;
-postDisc.tags = group.tags;
 
-if (sel_action_val=='categs')
-{
-disc_row = disc_row + '<tr>'+
-'<td style="border:1px solid black;border: 1px solid #000000;text-align: right;padding: 2px;">'+'<input type="checkbox" id="disc_cb'+index+'" name="disc_cb" class="disc_cb" onclick="javascript:checkUncheck(this.name);" value="'+postDisc.discUrl+'">'+'</td>'+
-'<td style="border:1px solid black;border: 1px solid #000000;padding: 2px;">'+postDisc.title+'</td>'+
-'<td style="border:1px solid black;border: 1px solid #000000;padding: 2px;">'+postDisc.category+'</td>'+
-'</tr>';
-
-var categg4=postDisc.category;
-var checkFlagItem = false;
-for(var ind=0;ind<categg4.length;ind++)
-{
-if (categg4[ind]==selected_cat)
-{
-console.log("categg4= "+categg4);
-console.log("selected_cat= "+selected_cat);
-console.log(document.getElementById("disc_cb"+index).value);
-var temp_id="disc_cb"+index;
-console.log("temp_id= "+temp_id);
-addId[arrayIndex]=temp_id;
-console.log("Array val: "+addId[arrayIndex]);
-arrayIndex++;
-if(catSelection) {
-	mainCheckedItems[contentCheckedIndex] = document.getElementById("disc_cb"+index).value;
-	contentCheckedIndex++;
-	checkFlagItem = true;
-	break;
-}
-}
-}
-if(catSelection && !checkFlagItem) {
-		mainUncheckItems[contentUnCheckedIndex] = document.getElementById("disc_cb"+index).value;
-		contentUnCheckedIndex++;
-}
-}
-else if (sel_action_val=='tags')
-{
-var tags=postDisc.tags;
-console.log("tags: "+tags);
-disc_row = disc_row + '<tr>'+
-'<td style="border:1px solid black;border: 1px solid #000000;text-align: right;padding: 2px;">'+'<input type="checkbox" id="disc_cb'+index+'" name="disc_cb" class="disc_cb" onclick="javascript:checkUncheck(this.name);" value="'+postDisc.discUrl+'">'+'</td>'+
-'<td style="border:1px solid black;border: 1px solid #000000;padding: 2px;">'+postDisc.title+'</td>'+
-'<td style="border:1px solid black;border: 1px solid #000000;padding: 2px;">'+postDisc.tags+'</td>'+
-'</tr>';
-
-for(var ind=0;ind<tags.length;ind++)
-{
-if (tags[ind]==selected_tag)
-{
-console.log("tags= "+tags);
-console.log("selected_tag= "+selected_tag);
-console.log(document.getElementById("disc_cb"+index).value);
-var temp_id="disc_cb"+index;
-console.log("temp_id= "+temp_id);
-addId[arrayIndex]=temp_id;
-console.log("Array val: "+addId[arrayIndex]);
-arrayIndex++;
-}
-}
-}
-else
-{
 disc_row = disc_row + '<tr>'+
 '<td style="border:1px solid black;border: 1px solid #000000;text-align: right;padding: 2px;">'+'<input type="checkbox" name="disc_cb" class="disc_cb" onclick="javascript:checkUncheck(this.name);" value="'+postDisc.discUrl+'">'+'</td>'+
 '<td style="border:1px solid black;border: 1px solid #000000;padding: 2px;">'+postDisc.title+'</td>'+
 '<td style="border:1px solid black;border: 1px solid #000000;padding: 2px;">'+postDisc.author+'</td>'+
-'</tr>';
-}
-
-	
+'</tr>';	
 });
 }
 disc_row=disc_row+'</table>';	
@@ -3827,24 +1879,11 @@ idea_row='<table id="ideaTable" border="0" class="jiveBorder" jive-data-cell="{&
 }
 else
 {
-if (sel_action_val=='categs')
-{
-var header='Category';
-}
-else if (sel_action_val=='tags')
-{
-var header='Tags';
-}
-else
-{
-var header='Author';
-}
-
 idea_row='<table id="ideaTable" border="0" class="jiveBorder" jive-data-cell="{&quot;color&quot;:&quot;#575757&quot;,&quot;textAlign&quot;:&quot;left&quot;,&quot;padding&quot;:&quot;2&quot;,&quot;backgroundColor&quot;:&quot;transparent&quot;,&quot;fontFamily&quot;:&quot;arial,helvetica,sans-serif&quot;,&quot;verticalAlign&quot;:&quot;baseline&quot;}" jive-data-header="{&quot;color&quot;:&quot;#FFFFFF&quot;,&quot;backgroundColor&quot;:&quot;#6690BC&quot;,&quot;textAlign&quot;:&quot;left&quot;,&quot;padding&quot;:&quot;2&quot;,&quot;fontFamily&quot;:&quot;arial,helvetica,sans-serif&quot;,&quot;verticalAlign&quot;:&quot;baseline&quot;}" style="border: 1px solid #000000; width: 450px;">'+
 '<tr>'+
 '<td style="border:1px solid black;border: 1px solid #000000;width: 60px;padding: 2px;color: #ffffff;background-color: #6690bc;text-align: right;" valign="middle"><strong>'+'All<input type="checkbox" id="sel_all_ideas"  onclick="javascript:checkedAll(this.id);">'+'</strong></th>'+
 '<td style="border:1px solid black;border: 1px solid #000000;width: 450px;padding: 2px;color: #ffffff;background-color: #6690bc;text-align: left;" valign="middle"><strong>&nbsp; Title</strong></th>'+
-'<td style="border:1px solid black;border: 1px solid #000000;width: 160px;padding: 2px;color: #ffffff;background-color: #6690bc;text-align: left;" valign="middle"><strong>&nbsp; '+header+'</strong></th>'+
+'<td style="border:1px solid black;border: 1px solid #000000;width: 160px;padding: 2px;color: #ffffff;background-color: #6690bc;text-align: left;" valign="middle"><strong>&nbsp; Author</strong></th>'+
 '</tr>';
 
 $.each(idea, function(index, group) {
@@ -3852,89 +1891,19 @@ postIdea = {
 title : "",
 author : "",
 updated : "",
-ideaUrl : "",
-category: "",
-tags: ""
+ideaUrl : ""
 }
 
 postIdea.title = group.subject;
 postIdea.author = group.author.name.formatted;
 postIdea.updated = group.updated;
 postIdea.ideaUrl = group.resources.self.ref;
-postIdea.category = group.categories;
-postIdea.tags = group.tags;
 
-
-if (sel_action_val=='categs')
-{
-idea_row = idea_row + '<tr>'+
-'<td style="border:1px solid black;border: 1px solid #000000;text-align: right;padding: 2px;">'+'<input type="checkbox" id="idea_cb'+index+'" name="idea_cb" class="idea_cb" onclick="javascript:checkUncheck(this.name);" value="'+postIdea.ideaUrl+'">'+'</td>'+
-'<td style="border:1px solid black;border: 1px solid #000000;padding: 2px;">'+postIdea.title+'</td>'+
-'<td style="border:1px solid black;border: 1px solid #000000;padding: 2px;">'+postIdea.category+'</td>'+
-'</tr>';
-
-var categg5=postIdea.category;
-var checkFlagItem = false;
-for(var ind=0;ind<categg5.length;ind++)
-{
-if (categg5[ind]==selected_cat)
-{
-console.log("categg5= "+categg5);
-console.log("selected_cat= "+selected_cat);
-console.log(document.getElementById("idea_cb"+index).value);
-var temp_id="idea_cb"+index;
-console.log("temp_id= "+temp_id);
-addId[arrayIndex]=temp_id;
-console.log("Array val: "+addId[arrayIndex]);
-arrayIndex++;
-if(catSelection) {
-	mainCheckedItems[contentCheckedIndex] = document.getElementById("idea_cb"+index).value;
-	contentCheckedIndex++;
-	checkFlagItem = true;
-	break;
-}
-}
-}
-if(catSelection && !checkFlagItem) {
-		mainUncheckItems[contentUnCheckedIndex] = document.getElementById("idea_cb"+index).value;
-		contentUnCheckedIndex++;
-}
-}
-else if (sel_action_val=='tags')
-{
-var tags=postIdea.tags;
-console.log("tags: "+tags);
-idea_row = idea_row + '<tr>'+
-'<td style="border:1px ;border: 1px solid #000000;text-align:right;padding:2px;">'+'<input type="checkbox" id="idea_cb'+index+'" name="idea_cb" class="idea_cb" onclick="javascript:checkUncheck(this.name);" value="'+postIdea.fileUrl+'">'+'</td>'+
-'<td style="border:1px ;border: 1px solid #000000;padding: 2px;">'+postIdea.title+'</td>'+
-'<td style="border:1px ;border: 1px solid #000000;padding: 2px;">'+postIdea.tags+'</td>'+
-'</tr>';
-
-for(var ind=0;ind<tags.length;ind++)
-{
-if (tags[ind]==selected_tag)
-{
-console.log("tags= "+tags);
-console.log("selected_tag= "+selected_tag);
-console.log(document.getElementById("idea_cb"+index).value);
-var temp_id="idea_cb"+index;
-console.log("temp_id= "+temp_id);
-addId[arrayIndex]=temp_id;
-console.log("Array val: "+addId[arrayIndex]);
-arrayIndex++;
-}
-}
-}
-else
-{
 idea_row = idea_row + '<tr>'+
 '<td style="border:1px solid black;border: 1px solid #000000;text-align: right;padding: 2px;">'+'<input type="checkbox" name="idea_cb" class="idea_cb" onclick="javascript:checkUncheck(this.name);" value="'+postIdea.ideaUrl+'">'+'</td>'+
 '<td style="border:1px solid black;border: 1px solid #000000;padding: 2px;">'+postIdea.title+'</td>'+
 '<td style="border:1px solid black;border: 1px solid #000000;padding: 2px;">'+postIdea.author+'</td>'+
-'</tr>';
-}
-
-	
+'</tr>';	
 });
 }
 idea_row=idea_row+'</table>';	
@@ -3961,25 +1930,12 @@ poll_row='<table id="pollTable" border="0" class="jiveBorder" jive-data-cell="{&
 }
 else
 {	
-if (sel_action_val=='categs')
-{
-var header='Category';
-}
-else if (sel_action_val=='tags')
-{
-var header='Tags';
-}
-else
-{
-var header='Author';
-}
-
 poll_row='<table id="pollTable" border="0" class="jiveBorder" jive-data-cell="{&quot;color&quot;:&quot;#575757&quot;,&quot;textAlign&quot;:&quot;left&quot;,&quot;padding&quot;:&quot;2&quot;,&quot;backgroundColor&quot;:&quot;transparent&quot;,&quot;fontFamily&quot;:&quot;arial,helvetica,sans-serif&quot;,&quot;verticalAlign&quot;:&quot;baseline&quot;}" jive-data-header="{&quot;color&quot;:&quot;#FFFFFF&quot;,&quot;backgroundColor&quot;:&quot;#6690BC&quot;,&quot;textAlign&quot;:&quot;left&quot;,&quot;padding&quot;:&quot;2&quot;,&quot;fontFamily&quot;:&quot;arial,helvetica,sans-serif&quot;,&quot;verticalAlign&quot;:&quot;baseline&quot;}" style="border: 1px solid #000000; width: 450px;">'+
 
 '<tr>'+
 '<td style="border:1px solid black;border: 1px solid #000000;width: 60px;padding: 2px;color: #ffffff;background-color: #6690bc;text-align: right;" valign="middle"><strong>'+'All<input type="checkbox" id="sel_all_polls"  onclick="javascript:checkedAll(this.id);">'+'</strong></th>'+
 '<td style="border:1px solid black;border: 1px solid #000000;width: 450px;padding: 2px;color: #ffffff;background-color: #6690bc;text-align: left;" valign="middle"><strong>&nbsp; Title</strong></th>'+
-'<td style="border:1px solid black;border: 1px solid #000000;width: 160px;padding: 2px;color: #ffffff;background-color: #6690bc;text-align: left;" valign="middle"><strong>&nbsp; '+header+'</strong></th>'+
+'<td style="border:1px solid black;border: 1px solid #000000;width: 160px;padding: 2px;color: #ffffff;background-color: #6690bc;text-align: left;" valign="middle"><strong>&nbsp; Author</strong></th>'+
 '</tr>';
 
 $.each(polls, function(index, group) {
@@ -3987,87 +1943,19 @@ postPolls = {
 title : "",
 author : "",
 updated : "",
-fileUrl : "",
-category: "",
-tags:""
+fileUrl : ""
 }
 
 postPolls.title = group.subject;
 postPolls.author = group.author.name.formatted;
 postPolls.updated = group.updated;
 postPolls.fileUrl = group.resources.self.ref;
-postPolls.category = group.categories;
-postPolls.tags = group.tags;
 
-if (sel_action_val=='categs')
-{
-poll_row = poll_row + '<tr>'+
-'<td style="border:1px solid black;border: 1px solid #000000;text-align: right;padding: 2px;">'+'<input type="checkbox" id="poll_cb'+index+'" name="poll_cb" class="poll_cb" onclick="javascript:checkUncheck(this.name);" value="'+postPolls.fileUrl+'">'+'</td>'+
-'<td style="border:1px solid black;border: 1px solid #000000;padding: 2px;">'+postPolls.title+'</td>'+
-'<td style="border:1px solid black;border: 1px solid #000000;padding: 2px;">'+postPolls.category+'</td>'+
-'</tr>';
-
-var categg6=postPolls.category;
-var checkFlagItem = false;
-for(var ind=0;ind<categg6.length;ind++)
-{
-if (categg6[ind]==selected_cat)
-{
-console.log("categg6= "+categg6);
-console.log("selected_cat= "+selected_cat);
-console.log(document.getElementById("poll_cb"+index).value);
-var temp_id="poll_cb"+index;
-console.log("temp_id= "+temp_id);
-addId[arrayIndex]=temp_id;
-console.log("Array val: "+addId[arrayIndex]);
-arrayIndex++;
-if(catSelection) {
-	mainCheckedItems[contentCheckedIndex] = document.getElementById("poll_cb"+index).value;
-	contentCheckedIndex++;
-	checkFlagItem = true;
-	break;
-}
-}
-}
-if(catSelection && !checkFlagItem) {
-		mainUncheckItems[contentUnCheckedIndex] = document.getElementById("poll_cb"+index).value;
-		contentUnCheckedIndex++;
-}
-}
-else if (sel_action_val=='tags')
-{
-var tags=postPolls.tags;
-console.log("tags: "+tags);
-poll_row = poll_row + '<tr>'+
-'<td style="border:1px solid black;border: 1px solid #000000;text-align: right;padding: 2px;">'+'<input type="checkbox" id="poll_cb'+index+'" name="poll_cb" class="poll_cb" onclick="javascript:checkUncheck(this.name);" value="'+postPolls.fileUrl+'">'+'</td>'+
-'<td style="border:1px solid black;border: 1px solid #000000;padding: 2px;">'+postPolls.title+'</td>'+
-'<td style="border:1px solid black;border: 1px solid #000000;padding: 2px;">'+postPolls.tags+'</td>'+
-'</tr>';
-
-for(var ind=0;ind<tags.length;ind++)
-{
-if (tags[ind]==selected_tag)
-{
-console.log("tags= "+tags);
-console.log("selected_tag= "+selected_tag);
-console.log(document.getElementById("poll_cb"+index).value);
-var temp_id="poll_cb"+index;
-console.log("temp_id= "+temp_id);
-addId[arrayIndex]=temp_id;
-console.log("Array val: "+addId[arrayIndex]);
-arrayIndex++;
-}
-}
-}
-else
-{
 poll_row = poll_row + '<tr>'+
 '<td style="border:1px solid black;border: 1px solid #000000;text-align: right;padding: 2px;">'+'<input type="checkbox" name="poll_cb" class="poll_cb" onclick="javascript:checkUncheck(this.name);" value="'+postPolls.fileUrl+'">'+'</td>'+
 '<td style="border:1px solid black;border: 1px solid #000000;padding: 2px;">'+postPolls.title+'</td>'+
 '<td style="border:1px solid black;border: 1px solid #000000;padding: 2px;">'+postPolls.author+'</td>'+
 '</tr>';
-}
-
 });
 }
 poll_row=poll_row+'</table>';	
@@ -4241,27 +2129,12 @@ $(this).removeClass('borderadd');
 }
 
 function showTab(){
-
 // actions when user choses to select content he wants to copy/move/delete/download.
-
-//checking of checkboxes
-console.log("array Len: "+addId.length);
- for (var i=0; i<addId.length; i++) 
- {
- console.log("value: "+addId[i]);
- document.getElementById(addId[i]).checked = true;
- }
-//end checking of checkboxes
 
 $("#stylized").hide();
 $("#selection_menu").show();
 
 $("#files_div").show();
-$("#docs_div").hide();
-$("#disc_div").hide();
-$("#idea_div").hide();
-$("#poll_div").hide();
-$("#blog_div").hide();
 
 $("#files_tab").click(function () {
 $("#files_div").show();
@@ -4321,19 +2194,7 @@ $("#blog_div").show();
 var all_selected=''; 
 
 function goBack(){
-
 // handles the code for creating the final selection tables and the list of values to be passed to the server/javascript
-if(sel_action_val=="categs")
-{
-	
-		startUpdatingCategories();
-}
-else if(sel_action_val=="tags")
-{
-	
-		startUpdatingTags();
-}
-else {
 
 all_selected='';
 Grp_file_json='';
@@ -4504,179 +2365,9 @@ all_selected='<table name="all_selected_items" id="all_selected_items" border="0
 document.getElementById("start_copying_button").disabled = true;
 document.getElementById("selected_items").innerHTML=all_selected;
 }
-}
+
 };
 
-function startUpdatingCategories() {
-	//alert("catagory selectionn....");
-	//alert("browserName = "+browserName);
-
-$("#catFrom").css("margin-top", "-290px");
-$("#cat_from_space").css("margin-left", "200px");
-$("#cat_from_group").css("margin-left", "200px");
-$("#cat_from_project").css("margin-left", "200px");
-$("#cat_from_space").css("margin-top", "-250px");
-$("#cat_from_group").css("margin-top", "-250px");
-$("#cat_from_project").css("margin-top", "-250px");
-
-$("#selection_menu").hide();
-$("#stylized").show();
-$("#change_selection_div").show();
-$("#change_contents").hide();
-$("#start_copying_button").hide();
-
-$("#cmdu").show();
-$("#cmdu").text("Manage Categories");
-$("#src_place").hide();
-$("#start_copying_button").hide();
-$("#change_contents").hide();
-$("#button_div").hide();
-$("#cat_place").hide();
-$("#cat_sel").hide();
-$("#selCat").hide();
-$("#catTo").show();
-$("#cat_select_items_button").hide();
-
-
-
-$("#selected_items").show();
-
-if(browserName=="MSIE")
-{
-var ieSpan='<span id="ieSpan" style="font-family:Tahoma;font-size:12px;font-color:#3778C7;"></span>';
-document.getElementById("selected_items").innerHTML=ieSpan; 
-}
-else
-{
-var iframe = '<iframe id="frame1"  style="width:650px;height:90px;margin-top:0px;font-family:Tahoma"></iframe>';
-document.getElementById("selected_items").innerHTML=iframe;  
-$("#catTo").text("Updating this:");
-}
-
-if(browserName=="MSIE")
-{
-var finalurl=redirection_url+'/content';
-document.getElementById("ieSpan").innerHTML = 'The selected contents are being update with category. The update contents will appear here in a short while: <a href='+'URL'+'>'+''+' - Contents</a>';
-}
-else
-{
-document.getElementById("frame1").contentDocument.body.style.fontFamily="Tahoma";	
-document.getElementById("frame1").contentDocument.body.style.fontSize = "12px";
-document.getElementById("frame1").contentDocument.body.style.color='Grey';
-document.getElementById("frame1").contentDocument.body.innerHTML = "Updating categories is in Progress.<br>Please leave this window open until the updating process has been completed.<br><br><span id='mySpan' style='font-weight:bold;'>"+'Updating content'.fontcolor("#3778C7")+"</span>";
-}
-	for(var index=0; index < mainCheckedItems.length;index++) {
-		//	alert("checked items : "+mainCheckedItems[index]);
-			//console.log("checked items : "+mainCheckedItems[index]);
-		}
-		
-		for(var index=0;index < mainUncheckItems.length;index++) {
-		//alert("unchecked items : "+mainUncheckItems[index]);
-			//console.log("unchecked items : "+mainUncheckItems[index]);
-		}
-		
-		//alert("mainCheckedItems.length = "+mainCheckedItems.length);
-		//console.log("mainCheckedItems.length = "+mainCheckedItems.length);
-		//alert("mainUncheckItems.length = "+mainUncheckItems.length);
-		//console.log("mainUncheckItems.length = "+mainUncheckItems.length);
-		//***********************************
-		filterCheckedUncheckCatgUrl1();
-		
-	
-		catIndex = 0;
-		//updateCategoriesForNewContents1();
-		//removeCategoriesForContents();
-}
-
-
-
-function startUpdatingTags() {
-	//alert("tag selectionn....");
-	//alert("browserName = "+browserName);
-
-$("#tagFrom").css("margin-left", "210px");
-$("#tagFrom").css("margin-top", "-290px");
-$("#tag_from_space").css("margin-top", "-250px");
-$("#tag_from_group").css("margin-top", "-250px");
-$("#tag_from_project").css("margin-top", "-250px");
-$("#selTag").show();
-$('#selTag').text("Selected Tag");
-$("#selTag").css("margin-left", "205px");
-$("#selTag").css("margin-top", "135px");
-$("#add_tag").css("margin-left", "240px");
-$("#add_tag").css("margin-top", "145px");
-
-$("#tagTo").css("margin-left", "250px");
-$("#tagTo").css("margin-top", "170px");
-
-$("#selection_menu").hide();
-$("#stylized").show();
-$("#change_selection_div").show();
-$("#change_contents").hide();
-$("#start_copying_button").hide();
-
-$("#cmdu").show();
-$("#cmdu").text("Manage Tags");
-$("#src_place").hide();
-$("#start_copying_button").hide();
-$("#change_contents").hide();
-$("#button_div").hide();
-$("#tag_place").hide();
-$("#tag_sel").hide();
-//$("#selTag").hide();
-$("#tagTo").show();
-$("#tag_select_items_button").hide();
-
-
-
-$("#selected_items").show();
-
-if(browserName=="MSIE")
-{
-var ieSpan='<span id="ieSpan" style="font-family:Tahoma;font-size:12px;font-color:#3778C7;"></span>';
-document.getElementById("selected_items").innerHTML=ieSpan; 
-}
-else
-{
-var iframe = '<iframe id="frame1"  style="width:650px;height:90px;margin-top:0px;font-family:Tahoma"></iframe>';
-document.getElementById("selected_items").innerHTML=iframe;  
-$("#tagTo").text("Updating Tags:");
-}
-
-if(browserName=="MSIE")
-{
-var finalurl=redirection_url+'/content';
-document.getElementById("ieSpan").innerHTML = 'The selected contents are being update with tag. The update contents will appear here in a short while: <a href='+'URL'+'>'+''+' - Contents</a>';
-}
-else
-{
-document.getElementById("frame1").contentDocument.body.style.fontFamily="Tahoma";	
-document.getElementById("frame1").contentDocument.body.style.fontSize = "12px";
-document.getElementById("frame1").contentDocument.body.style.color='Grey';
-document.getElementById("frame1").contentDocument.body.innerHTML = "Updating tags is in Progress.<br>Please leave this window open until the updating process has been completed.<br><br><span id='mySpan' style='font-weight:bold;'>"+'Updating content'.fontcolor("#3778C7")+"</span>";
-}
-	for(var index=0; index < mainCheckedItems.length;index++) {
-		//	alert("checked items : "+mainCheckedItems[index]);
-			//console.log("checked items : "+mainCheckedItems[index]);
-		}
-		
-		for(var index=0;index < mainUncheckItems.length;index++) {
-		//alert("unchecked items : "+mainUncheckItems[index]);
-			//console.log("unchecked items : "+mainUncheckItems[index]);
-		}
-		
-		//alert("mainCheckedItems.length = "+mainCheckedItems.length);
-		//console.log("mainCheckedItems.length = "+mainCheckedItems.length);
-		//alert("mainUncheckItems.length = "+mainUncheckItems.length);
-		//console.log("mainUncheckItems.length = "+mainUncheckItems.length);
-		//***********************************
-		filterCheckedUncheckTagUrl1();
-		
-	
-		catIndex = 0;
-		//updateTagsForNewContents1();
-		//removeTagsForContents();
-}
 function startCopying(){
 // handles actions after clicking the start copy button.
 
@@ -4779,46 +2470,12 @@ if (pos!=-1)
 // redirects to target place when the final message is received.
 document.getElementById("frame1").contentDocument.body.innerHTML = "Copying in Progress.<br>Please leave this window open until the copying process has been completed.<br><br><span id='mySpan' style='font-weight:bold;'>"+str.fontcolor("#3778C7")+"</span>";
 $("#stylized").fadeOut(5000,function(){
-//enable copy action again
-
-$("#src_place").show();
-$('.src_place option:eq(2)').prop('selected', true);
-$("#cmdu").hide();
-$("#from_label").show();
-$("#to_label").show();
-
-$("#from_place").show();
-$("#to_place").show();
-//$('#to_place').prop('disabled', 'disabled');
-var finalurl=redirection_url+'/content';
-var str='Copying completed. Please click   <a href='+finalurl+'>here </a>  for the new location of your content.';
-document.getElementById("frame1").contentDocument.body.innerHTML = "Note.<br><br><span id='mySpan' style='font-weight:bold;'>"+str.fontcolor("#3778C7")+"</span>";
-
-//end enabling copy action
-
-//window.location = redirection_url+'/content';
+window.location = redirection_url+'/content';
 });
 }
 }
 else
 {
-
-
-$("#src_place").show();
-$('.src_place option:eq(2)').prop('selected', true);
-$("#cmdu").hide();
-$("#from_label").show();
-$("#to_label").show();
-
-$("#from_place").show();
-$("#to_place").show();
-$("#button_div").show();
-$("#copyTo").text("Copy this:");
-//$('#to_place').prop('disabled', 'disabled');
-var finalurl=redirection_url+'/content';
-var str='Copying completed. Please click   <a href='+finalurl+'>here </a>  for the new location of your content.';
-document.getElementById("frame1").contentDocument.body.innerHTML = "Note.<br><br><span id='mySpan' style='font-weight:bold;'>"+str.fontcolor("#3778C7")+"</span>";
-
 var serverMsg = "Server is stopped/down, check with the administrator.";
 document.getElementById("frame1").contentDocument.body.innerHTML = "<br><br><span id='mySpan' style='font-weight:bold;'>"+serverMsg.fontcolor("#3778C7")+"</span>";
 }	

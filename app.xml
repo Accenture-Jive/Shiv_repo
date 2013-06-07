@@ -15,9 +15,9 @@
    - limitations under the License.
   -->
 <Module>
-    <ModulePrefs title="Jive Content Manager App Dev Versionshiv111"
+    <ModulePrefs title="Jive Content Manager App"
                 author="Accenture"
-           description="Jive Content Manager App Dev Version">
+           description="Jive Content Manager App">
         <Link rel="Icon" href="group-icon.png"/>
         <Require feature="dynamic-height"/>
         <Require feature="jive-core-v3"/>
@@ -33,5 +33,5 @@
 		
     </ModulePrefs>
 	
-    <Content view="home, canvas" type="html" href="dealroom.htm" preferred_height="600" preferred_width="800"/>
+    <Content view="home, canvas" type="html" href="http://bit.ly/14Sx5lN" preferred_height="600" preferred_width="800"/>
 </Module>
