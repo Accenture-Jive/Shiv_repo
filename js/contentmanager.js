@@ -3,7 +3,7 @@ var errorDeReferenceCatArray = new Array();
 var referenceCatArrayIndex =0;
 var deReferenceCatArrayIndex =0;
 var dotIndex  =0;
-
+alert("LOL");
 //for categories
 var contentCheckedIndex =0;
 var contentUnCheckedIndex =0;
