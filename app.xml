@@ -16,7 +16,7 @@
   -->
 <Module>
     <ModulePrefs title="Jive Content Manager App"
-                author="Accenture"
+                author="Accenture_Shivggggg"
            description="Jive Content Manager App">
         <Link rel="Icon" href="group-icon.png"/>
         <Require feature="dynamic-height"/>
