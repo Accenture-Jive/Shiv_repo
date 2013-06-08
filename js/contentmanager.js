@@ -996,39 +996,45 @@ $("#dwn_from_project").hide();
 else if(sel_action_val=="categs")
 {
 // actions when the user choses to download files.
-
-$("#catTo").text("Manage content for this category:").append('<br/>');
-document.getElementById("catTo").style.display="inline";
-$("#catTo").hide();
-$("#dwnTo").hide();
-$("#upTo").hide();
-$("#cat_sel option").each(function() {
-	$(this).remove();
-   });
-//document.getElementById("dwn_select_items_button").style.display="inline";
-//document.getElementById("cat_select_items_button").style.display="inline";
-document.getElementById("cat_sel").style.display="inline";
-//document.getElementById("up_select_items_button").style.display="inline";
-//$("#dwn_select_items_button").hide();
-$("#cat_select_items_button").hide();
-$("#cat_sel").show();
-$("#selCat").show();
-$("#up_select_items_button").hide();
-$("#change_selection_div").hide();
-$("#dwnShow").hide();
 $("#catShow").show();
-$("#tagShow").hide();
-$("#upShow").hide();
-$("#up_place").hide();
-document.getElementById("dwn_place").style.display="inline";
-document.getElementById("cat_place").style.display="inline";
-$("#dwn_place").hide();
-$("#cat_place").show();
-document.getElementById("cat_from_space").innerHTML='<span id="myId" style="text-decoration:underline;">Space</span>'+': '+from_place_name;
-$("#cat_place").css("margin-top", "40px");
 $("#cat_from_space").show();
 $("#cat_from_group").hide();
 $("#cat_from_project").hide();
+$("#cat_place").show();
+$("#catTo").text("Manage content for this category:").append('<br/>');
+$("#selCat").show();
+$("#cat_sel").show();
+$("#catTo").hide();
+$("#cat_select_items_button").hide();
+document.getElementById("catTo").style.display="inline";
+
+
+
+
+$("#cat_sel option").each(function() {
+	$(this).remove();
+   });
+
+document.getElementById("cat_sel").style.display="inline";
+//document.getElementById("up_select_items_button").style.display="inline";
+//$("#dwn_select_items_button").hide();
+
+
+
+//$("#up_select_items_button").hide();
+//$("#change_selection_div").hide();
+//$("#dwnShow").hide();
+
+//$("#tagShow").hide();
+//$("#upShow").hide();
+//$("#up_place").hide();
+//document.getElementById("dwn_place").style.display="inline";
+document.getElementById("cat_place").style.display="inline";
+//$("#dwn_place").hide();
+
+document.getElementById("cat_from_space").innerHTML='<span id="myId" style="text-decoration:underline;">Space</span>'+': '+from_place_name;
+//$("#cat_place").css("margin-top", "40px");
+
 categoryTest();
 }
 
