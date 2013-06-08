@@ -134,6 +134,7 @@ $("#change_selection_div").hide();
 $("#stylized").show();
 $("#showDiv").show();
 $("#to_place").show();
+$("#from_place").show();
 document.getElementById("to_place").disabled = true;
 $("#copyTo").show();
 $('#from_label').text("Copy From:");
