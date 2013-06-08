@@ -134,7 +134,7 @@ $("#change_selection_div").hide();
 $("#stylized").show();
 $("#showDiv").show();
 $("#to_place").show();
-$("#from_place").show();
+$("#to_place").show();
 document.getElementById("to_place").disabled = true;
 $("#copyTo").show();
 $('#from_label').text("Copy From:");
@@ -156,10 +156,20 @@ $("#cat_from_space").hide();
 $("#cat_from_group").hide();
 $("#cat_from_project").hide();
 //**********************End********************************
-//********Hide all  the items with regard to Manage tags*************
+//Hide all the items with regard to Manage Tags*************
+$("#tagShow").hide();
+$("#tagFrom").hide();
+$("#tag_place").hide();
+$("#selTag").hide();
+$("#tag_sel").hide();
+$("#tagTo").hide();
+$("#tag_from_space").hide();
+$("#tag_from_group").hide();
+$("#tag_from_project").hide();
+$("#add_tag_button").hide();
+$("#tag_select_items_button").hide();
 
-
-//************************End************************
+//*************End****************
 $('#start_copying_button').unbind('click').click(function(){startCopying();});		
 }
 else if(sel_action_val=="move"){
@@ -228,6 +238,20 @@ $("#cat_from_space").hide();
 $("#cat_from_group").hide();
 $("#cat_from_project").hide();
 //**********************End********************************
+//Hide all the items with regard to Manage Tags*************
+$("#tagShow").hide();
+$("#tagFrom").hide();
+$("#tag_place").hide();
+$("#selTag").hide();
+$("#tag_sel").hide();
+$("#tagTo").hide();
+$("#tag_from_space").hide();
+$("#tag_from_group").hide();
+$("#tag_from_project").hide();
+$("#add_tag_button").hide();
+$("#tag_select_items_button").hide();
+
+//*************End****************
 $('#start_copying_button').unbind('click').click(function(){startMoving();});
 }
 else if(sel_action_val=="delete"){
@@ -286,6 +310,20 @@ $("#cat_from_space").hide();
 $("#cat_from_group").hide();
 $("#cat_from_project").hide();
 //**********************End********************************
+//Hide all the items with regard to Manage Tags*************
+$("#tagShow").hide();
+$("#tagFrom").hide();
+$("#tag_place").hide();
+$("#selTag").hide();
+$("#tag_sel").hide();
+$("#tagTo").hide();
+$("#tag_from_space").hide();
+$("#tag_from_group").hide();
+$("#tag_from_project").hide();
+$("#add_tag_button").hide();
+$("#tag_select_items_button").hide();
+
+//*************End****************
 $('#start_copying_button').unbind('click').click(function(){startDeleting();});
 }
 else if(sel_action_val=="uploadd"){
@@ -300,6 +338,20 @@ $("#cat_from_space").hide();
 $("#cat_from_group").hide();
 $("#cat_from_project").hide();
 //**********************End********************************
+//Hide all the items with regard to Manage Tags*************
+$("#tagShow").hide();
+$("#tagFrom").hide();
+$("#tag_place").hide();
+$("#selTag").hide();
+$("#tag_sel").hide();
+$("#tagTo").hide();
+$("#tag_from_space").hide();
+$("#tag_from_group").hide();
+$("#tag_from_project").hide();
+$("#add_tag_button").hide();
+$("#tag_select_items_button").hide();
+
+//*************End****************
 if(browserName=="MSIE")
 {
 
@@ -461,6 +513,20 @@ $("#cat_from_space").hide();
 $("#cat_from_group").hide();
 $("#cat_from_project").hide();
 //**********************End********************************
+//Hide all the items with regard to Manage Tags*************
+$("#tagShow").hide();
+$("#tagFrom").hide();
+$("#tag_place").hide();
+$("#selTag").hide();
+$("#tag_sel").hide();
+$("#tagTo").hide();
+$("#tag_from_space").hide();
+$("#tag_from_group").hide();
+$("#tag_from_project").hide();
+$("#add_tag_button").hide();
+$("#tag_select_items_button").hide();
+
+//*************End****************
 $('#start_copying_button').unbind('click').click(function(){startDownloading();});
 }
 
@@ -603,6 +669,20 @@ $("#cat_from_space").hide();
 $("#cat_from_group").hide();
 $("#cat_from_project").hide();
 //**********************End********************************
+//Hide all the items with regard to Manage Tags*************
+$("#tagShow").hide();
+$("#tagFrom").hide();
+$("#tag_place").hide();
+$("#selTag").hide();
+$("#tag_sel").hide();
+$("#tagTo").hide();
+$("#tag_from_space").hide();
+$("#tag_from_group").hide();
+$("#tag_from_project").hide();
+$("#add_tag_button").hide();
+$("#tag_select_items_button").hide();
+
+//*************End****************
 }
 }
 
