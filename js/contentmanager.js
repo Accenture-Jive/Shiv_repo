@@ -144,6 +144,10 @@ $('#select_items_button').hide();
 
 $("#copyTo").text("Copy this:").append('<br/>');
 $('#start_copying_button').val('Start Copying');
+//********Hide all  the items with regard to Manage categories*************
+$("#catFrom").hide();
+$("#cat_place").hide();
+//**********************End********************************
 $('#start_copying_button').unbind('click').click(function(){startCopying();});		
 }
 else if(sel_action_val=="move"){
@@ -200,6 +204,10 @@ $('#to_label').show();
 $('#select_items_button').hide();
 $("#copyTo").text("Move this:").append('<br/>');
 $('#start_copying_button').val('Start Moving');
+//********Hide all  the items with regard to Manage categories*************
+$("#catFrom").hide();
+$("#cat_place").hide();
+//**********************End********************************
 $('#start_copying_button').unbind('click').click(function(){startMoving();});
 }
 else if(sel_action_val=="delete"){
@@ -247,9 +255,17 @@ $("#to_group").hide();
 $("#to_project").hide();
 $('#select_items_button').hide();	
 $('#start_copying_button').val('Start Deleting');
+//********Hide all  the items with regard to Manage categories*************
+$("#catFrom").hide();
+$("#cat_place").hide();
+//**********************End********************************
 $('#start_copying_button').unbind('click').click(function(){startDeleting();});
 }
 else if(sel_action_val=="uploadd"){
+//********Hide all  the items with regard to Manage categories*************
+$("#catFrom").hide();
+$("#cat_place").hide();
+//**********************End********************************
 if(browserName=="MSIE")
 {
 
@@ -400,6 +416,10 @@ $("#to_group").hide();
 $("#to_project").hide();
 $('#select_items_button').hide();	
 $('#start_copying_button').val('Start Downloading');
+//********Hide all  the items with regard to Manage categories*************
+$("#catFrom").hide();
+$("#cat_place").hide();
+//**********************End********************************
 $('#start_copying_button').unbind('click').click(function(){startDownloading();});
 }
 
@@ -513,6 +533,10 @@ $("#del_place").hide();
 $("#upShow").hide();
 $("#up_place").hide();
 $('#select_items_button').hide();
+//********Hide all  the items with regard to Manage categories*************
+$("#catFrom").hide();
+$("#cat_place").hide();
+//**********************End********************************
 }
 }
 
