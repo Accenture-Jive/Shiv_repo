@@ -1012,7 +1012,7 @@ $("#selCat").show();
 $("#cat_sel").show();
 $("#catTo").hide();
 $("#cat_select_items_button").hide();
-document.getElementById("catTo").style.display="inline";
+//document.getElementById("catTo").style.display="inline";
 
 $("#cat_sel option").each(function() {
 	$(this).remove();
