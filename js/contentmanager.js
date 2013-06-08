@@ -1011,7 +1011,7 @@ $("#catTo").text("Manage content for this category:").append('<br/>');
 $("#selCat").show();
 $("#cat_sel").show();
 $("#catTo").hide();
-$("#cat_select_items_button").show();
+$("#cat_select_items_button").hide();
 document.getElementById("catTo").style.display="inline";
 
 $("#cat_sel option").each(function() {
@@ -3867,5 +3867,22 @@ function populatePolls(space_url) {
             javascript: showTab();
             javascript: highlightTab();
         });
+}
+
+
+function categSel()
+{
+selected_cat=document.getElementById('cat_sel').value;
+if (selected_cat=="val1")
+{
+$("#cat_select_items_button").hide();
+$("#catTo").hide();
+}
+else
+{
+$("#cat_select_items_button").hide();
+$("#catTo").hide();
+}
+
 }
 //*********************************************************End*************
