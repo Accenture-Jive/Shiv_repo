@@ -207,6 +207,7 @@ $("#change_selection_div").hide();
 $("#stylized").show();
 $("#showDiv").show();
 $("#to_place").show();
+$("#from_place").show();
 $("#copyTo").show();
 $('#from_label').text("Move From:");
 $('#to_label').text("Move To:");
@@ -510,6 +511,7 @@ $("#dwn_select_items_button").hide();
 
 $("#tab_items").show();
 $("#change_selection_div").hide();
+$('#select_items_button').hide();
 $("#showDiv").hide();
 $("#copyTo").hide();
 document.getElementById("del_place").style.display="inline";
@@ -542,14 +544,14 @@ document.getElementById("upFrom").style.display="inline";
 
 $('#from_label').hide();
 $('#to_label').hide();
+$('#from_space').hide();
+$('#from_group').hide();
+$('#from_project').hide();
+$('#to_space').hide();
+$('#to_group').hide();
+$('#to_project').hide();
+$('#from_place').hide();
 $('#to_place').hide();
-$('#to_place').hide();
-$("#to_space").hide();
-$("#to_group").hide();
-$("#to_project").hide();
-$('#select_items_button').hide();	
-$('#start_copying_button').val('Start Deleting');
-$('#start_copying_button').unbind('click').click(function(){startDeleting();});
 }
 
 
