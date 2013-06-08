@@ -1033,7 +1033,7 @@ document.getElementById("cat_place").style.display="inline";
 //$("#dwn_place").hide();
 
 document.getElementById("cat_from_space").innerHTML='<span id="myId" style="text-decoration:underline;">Space</span>'+': '+from_place_name;
-//$("#cat_place").css("margin-top", "40px");
+$("#cat_place").css("margin-top", "40px");
 
 categoryTest();
 }
