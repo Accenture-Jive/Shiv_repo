@@ -450,12 +450,22 @@ $('#start_copying_button').unbind('click').click(function(){startDownloading();}
 else if(sel_action_val=="categs"){
 src_space_name='';
 dest_space_name='';
+//Show the items related to categories and hide the others
 $("#catShow").show();
-$("#tagShow").hide();
-$("#deleteTo").hide();
+$("#catFrom").show();
+$("#cat_place").show();
+$("#selCat").hide();
+$("#cat_sel").hide();
+$("#catTo").hide();
+$("#cat_select_items_button").hide();
+//*********************End*********************
+
 //$('#cat_place').css("margin-top", "0px");
 //$('#cat_place').css("margin-left", "-65px");
-$("#cat_select_items_button").hide();
+//$("#catFrom").css("margin-top", "-30px");
+//$('#cat_place').css("margin-top", "120px");
+$("#tagShow").hide();
+$("#deleteTo").hide();
 $("#selTag").hide();
 $("#tag_place").hide();
 $("#tag_sel").hide();
@@ -467,11 +477,8 @@ $("#tagTo").hide();
 $("#add_tag_button").hide();
 $("#tag_select_items_button").hide();
 document.getElementById("cat_place").style.display="inline";
-$("#cat_place").show();
-//$("#catFrom").css("margin-top", "-30px");
-$("#catFrom").show();
-//$("#del_place").css("margin-top", "110px");
-//$('#cat_place').css("margin-top", "120px");
+
+
 $("#dwnFrom").hide();
 $("#del_place").hide();
 $("#dwn_from_space").hide();
