@@ -145,9 +145,17 @@ $('#select_items_button').hide();
 $("#copyTo").text("Copy this:").append('<br/>');
 $('#start_copying_button').val('Start Copying');
 //********Hide all  the items with regard to Manage categories*************
+$("#catShow").hide();
 $("#catFrom").hide();
 $("#cat_place").hide();
+$("#selCat").hide();
+$("#catTo").hide();
+$("#cat_select_items_button").hide();
 //**********************End********************************
+//********Hide all  the items with regard to Manage tags*************
+
+
+//************************End************************
 $('#start_copying_button').unbind('click').click(function(){startCopying();});		
 }
 else if(sel_action_val=="move"){
@@ -205,8 +213,12 @@ $('#select_items_button').hide();
 $("#copyTo").text("Move this:").append('<br/>');
 $('#start_copying_button').val('Start Moving');
 //********Hide all  the items with regard to Manage categories*************
+$("#catShow").hide();
 $("#catFrom").hide();
 $("#cat_place").hide();
+$("#selCat").hide();
+$("#catTo").hide();
+$("#cat_select_items_button").hide();
 //**********************End********************************
 $('#start_copying_button').unbind('click').click(function(){startMoving();});
 }
@@ -256,15 +268,23 @@ $("#to_project").hide();
 $('#select_items_button').hide();	
 $('#start_copying_button').val('Start Deleting');
 //********Hide all  the items with regard to Manage categories*************
+$("#catShow").hide();
 $("#catFrom").hide();
 $("#cat_place").hide();
+$("#selCat").hide();
+$("#catTo").hide();
+$("#cat_select_items_button").hide();
 //**********************End********************************
 $('#start_copying_button').unbind('click').click(function(){startDeleting();});
 }
 else if(sel_action_val=="uploadd"){
 //********Hide all  the items with regard to Manage categories*************
+$("#catShow").hide();
 $("#catFrom").hide();
 $("#cat_place").hide();
+$("#selCat").hide();
+$("#catTo").hide();
+$("#cat_select_items_button").hide();
 //**********************End********************************
 if(browserName=="MSIE")
 {
@@ -417,8 +437,12 @@ $("#to_project").hide();
 $('#select_items_button').hide();	
 $('#start_copying_button').val('Start Downloading');
 //********Hide all  the items with regard to Manage categories*************
+$("#catShow").hide();
 $("#catFrom").hide();
 $("#cat_place").hide();
+$("#selCat").hide();
+$("#catTo").hide();
+$("#cat_select_items_button").hide();
 //**********************End********************************
 $('#start_copying_button').unbind('click').click(function(){startDownloading();});
 }
@@ -534,8 +558,12 @@ $("#upShow").hide();
 $("#up_place").hide();
 $('#select_items_button').hide();
 //********Hide all  the items with regard to Manage categories*************
+$("#catShow").hide();
 $("#catFrom").hide();
 $("#cat_place").hide();
+$("#selCat").hide();
+$("#catTo").hide();
+$("#cat_select_items_button").hide();
 //**********************End********************************
 }
 }
