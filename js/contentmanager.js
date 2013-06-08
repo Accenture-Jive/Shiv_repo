@@ -151,6 +151,9 @@ $("#cat_place").hide();
 $("#selCat").hide();
 $("#catTo").hide();
 $("#cat_select_items_button").hide();
+$("#cat_from_space").hide();
+$("#cat_from_group").hide();
+$("#cat_from_project").hide();
 //**********************End********************************
 //********Hide all  the items with regard to Manage tags*************
 
@@ -219,6 +222,9 @@ $("#cat_place").hide();
 $("#selCat").hide();
 $("#catTo").hide();
 $("#cat_select_items_button").hide();
+$("#cat_from_space").hide();
+$("#cat_from_group").hide();
+$("#cat_from_project").hide();
 //**********************End********************************
 $('#start_copying_button').unbind('click').click(function(){startMoving();});
 }
@@ -274,6 +280,9 @@ $("#cat_place").hide();
 $("#selCat").hide();
 $("#catTo").hide();
 $("#cat_select_items_button").hide();
+$("#cat_from_space").hide();
+$("#cat_from_group").hide();
+$("#cat_from_project").hide();
 //**********************End********************************
 $('#start_copying_button').unbind('click').click(function(){startDeleting();});
 }
@@ -285,6 +294,9 @@ $("#cat_place").hide();
 $("#selCat").hide();
 $("#catTo").hide();
 $("#cat_select_items_button").hide();
+$("#cat_from_space").hide();
+$("#cat_from_group").hide();
+$("#cat_from_project").hide();
 //**********************End********************************
 if(browserName=="MSIE")
 {
@@ -443,6 +455,9 @@ $("#cat_place").hide();
 $("#selCat").hide();
 $("#catTo").hide();
 $("#cat_select_items_button").hide();
+$("#cat_from_space").hide();
+$("#cat_from_group").hide();
+$("#cat_from_project").hide();
 //**********************End********************************
 $('#start_copying_button').unbind('click').click(function(){startDownloading();});
 }
@@ -451,6 +466,7 @@ else if(sel_action_val=="categs"){
 src_space_name='';
 dest_space_name='';
 //Show the items related to categories and hide the others
+$("#cmdu").text("Manage Categories");
 $("#catShow").show();
 $("#catFrom").show();
 $("#cat_place").show();
@@ -458,73 +474,80 @@ $("#selCat").hide();
 $("#cat_sel").hide();
 $("#catTo").hide();
 $("#cat_select_items_button").hide();
+$("#cat_from_space").hide();
+$("#cat_from_group").hide();
+$("#cat_from_project").hide();
+$("#newUpSel").hide();
+$("#start_copying_button").hide();
+$("#start_uploading").hide();
+$("#change_contents").hide();
 //*********************End*********************
 
-//$('#cat_place').css("margin-top", "0px");
-//$('#cat_place').css("margin-left", "-65px");
-//$("#catFrom").css("margin-top", "-30px");
-//$('#cat_place').css("margin-top", "120px");
+//Hide all the items with regard to Manage Tags*************
 $("#tagShow").hide();
-$("#deleteTo").hide();
-$("#selTag").hide();
-$("#tag_place").hide();
-$("#tag_sel").hide();
 $("#tagFrom").hide();
+$("#tag_place").hide();
+$("#selTag").hide();
+$("#tag_sel").hide();
+$("#tagTo").hide();
 $("#tag_from_space").hide();
 $("#tag_from_group").hide();
 $("#tag_from_project").hide();
-$("#tagTo").hide();
 $("#add_tag_button").hide();
 $("#tag_select_items_button").hide();
 document.getElementById("cat_place").style.display="inline";
+//*************End****************
 
-
+//Hide all the items with regard to download
+$("#dwnShow").hide();
 $("#dwnFrom").hide();
-$("#del_place").hide();
 $("#dwn_from_space").hide();
 $("#dwn_from_group").hide();
 $("#dwn_from_project").hide();
 $("#dwn_place").hide();
 $("#dwnTo").hide();
-$("#cmdu").text("Manage Categories");
 $("#dwn_select_items_button").hide();
-$("#dwnFrom").hide();
+
 $("#tab_items").show();
-//$('#all_selected_items').css("margin-top", "80px");
-//$('#selected_items').css("margin-top", "80px");
 $("#change_selection_div").hide();
-$("#showDiv").hide();
-//document.getElementById("del_place").style.display="inline";
-document.getElementById("del_select_items_button").style.display="inline";
-document.getElementById("up_select_items_button").style.display="inline";
-document.getElementById("up_place").style.display="inline";
-$("#del_place").css("margin-top", "110px");
-$("#del_select_items_button").hide();
-$("#up_select_items_button").hide();
-$("#copyTo").hide();
-$("#up_place").hide();
+
+
+//*******************hide all items with regard to delete
 $("#delShow").hide();
-$("#tagShow").hide();
-$("#upShow").hide();
-$("#upTo").hide();
+$("#deleteFrom").hide();
 $("#del_from_space").hide();
 $("#del_from_group").hide();
 $("#del_from_project").hide();
+$("#del_place").hide();
+$("#deleteTo").hide();
+$("#del_select_items_button").hide();
+
+//*************Hide all elements with regard to upload
+$("#upShow").hide();
+$("#up_place").hide();
+$('#upFrom').hide();
+$("#up_select_items_button").hide();
 $("#up_from_space").hide();
 $("#up_from_group").hide();
 $("#up_from_project").hide();
+$("#upTo").hide();
+
+
 document.getElementById("deleteFrom").style.display="inline";
 document.getElementById("upFrom").style.display="inline";
-$('#upFrom').hide();
+
+$("#showDiv").hide();
+$("#copyTo").hide();
 $('#from_label').hide();
 $('#to_label').hide();
-$('#to_place').hide();
+$('#from_space').hide();
+$('#from_group').hide();
+$('#from_project').hide();
 $("#to_space").hide();
 $("#to_group").hide();
 $("#to_project").hide();
-$('#select_items_button').hide();	
-$('#start_copying_button').val('Start Deleting');
-$('#start_copying_button').unbind('click').click(function(){startDeleting();});
+$('#to_place').hide();
+$('#from_place').hide();
 }
 
 
@@ -571,6 +594,9 @@ $("#cat_place").hide();
 $("#selCat").hide();
 $("#catTo").hide();
 $("#cat_select_items_button").hide();
+$("#cat_from_space").hide();
+$("#cat_from_group").hide();
+$("#cat_from_project").hide();
 //**********************End********************************
 }
 }
