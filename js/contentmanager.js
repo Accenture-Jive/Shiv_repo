@@ -1005,7 +1005,7 @@ $("#catTo").text("Manage content for this category:").append('<br/>');
 $("#selCat").show();
 $("#cat_sel").show();
 $("#catTo").hide();
-$("#cat_select_items_button").hide();
+$("#cat_select_items_button").show();
 document.getElementById("catTo").style.display="inline";
 
 $("#cat_sel option").each(function() {
