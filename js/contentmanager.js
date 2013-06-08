@@ -510,8 +510,12 @@ $("#dwn_select_items_button").hide();
 
 $("#tab_items").show();
 $("#change_selection_div").hide();
-
-
+$("#showDiv").hide();
+$("#copyTo").hide();
+document.getElementById("del_place").style.display="inline";
+document.getElementById("del_select_items_button").style.display="inline";
+document.getElementById("up_select_items_button").style.display="inline";
+document.getElementById("up_place").style.display="inline";
 //*******************hide all items with regard to delete
 $("#delShow").hide();
 $("#deleteFrom").hide();
@@ -533,18 +537,19 @@ $("#up_from_project").hide();
 $("#upTo").hide();
 
 
-$("#showDiv").hide();
-$("#copyTo").hide();
+document.getElementById("deleteFrom").style.display="inline";
+document.getElementById("upFrom").style.display="inline";
+
 $('#from_label').hide();
 $('#to_label').hide();
-$('#from_space').hide();
-$('#from_group').hide();
-$('#from_project').hide();
+$('#to_place').hide();
+$('#to_place').hide();
 $("#to_space").hide();
 $("#to_group").hide();
 $("#to_project").hide();
-$('#to_place').hide();
-$('#from_place').hide();
+$('#select_items_button').hide();	
+$('#start_copying_button').val('Start Deleting');
+$('#start_copying_button').unbind('click').click(function(){startDeleting();});
 }
 
 
