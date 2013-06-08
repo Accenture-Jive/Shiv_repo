@@ -3062,4 +3062,32 @@ function categoryTest() {
 	uri: space_url
 	}).execute(onPlaceFetchBlog);
 }
+
+function onPlaceFetchBlog(response){
+	response.getCategories().execute(catFetch);
+
+}
+function catFetch(response) {
+    // capture the categories in the space/group/project and then populate the same in a dropdown.
+    var groups_list = [];
+
+    //console.log(JSON.stringify(response));
+    var list_len = response.list.length;
+    for (i = 0; i < list_len; i++) {
+        //console.log(response.list[i].name);
+        groups_list.push(response.list[i].name);
+        document.getElementById('cat_sel').options[i] = new Option(response.list[i].name, response.list[i].name);
+    }
+
+    var myOptions = {
+        val1: 'Select Category'
+    };
+    var mySelect = $('#cat_sel');
+    $.each(myOptions, function (val, text) {
+        mySelect.prepend(
+            $('<option></option>').val(val).html(text));
+    });
+
+    $('select option[value="val1"]').attr("selected", true);
+}
 //*********************************************************End*************
