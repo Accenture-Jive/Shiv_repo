@@ -533,9 +533,6 @@ $("#up_from_project").hide();
 $("#upTo").hide();
 
 
-document.getElementById("deleteFrom").style.display="inline";
-document.getElementById("upFrom").style.display="inline";
-
 $("#showDiv").hide();
 $("#copyTo").hide();
 $('#from_label').hide();
