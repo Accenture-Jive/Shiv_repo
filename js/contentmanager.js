@@ -3932,6 +3932,7 @@ $("#cat_place").hide();
 $("#cat_sel").hide();
 $("#selCat").show();
 $("#catTo").show();
+$("#from_space").show();
 $("#cat_select_items_button").hide();
 $("#catFrom").css("margin-top","-250px");
 $("#cat_from_space").css("margin-top","-200px");
