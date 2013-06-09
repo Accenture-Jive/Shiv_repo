@@ -625,6 +625,7 @@ $('#to_group').hide();
 $('#to_project').hide();
 $('#from_place').hide();
 $('#to_place').hide();
+$('#button_div').hide();
 }
 
 
@@ -3923,7 +3924,14 @@ $("#start_copying_button").hide();
 $("#cmdu").show();
 $("#cmdu").text("Manage Categories");
 $("#src_place").hide();
-$("#start_copying_button").hide();
+$("#catFrom").hide('Selected Place');
+$("#cat_from_space").show();
+$("#cat_from_space").hide();
+$("#cat_from_space").show();
+$("#catFrom").show();
+$("#catFrom").hide();
+$("#catFrom").show();
+//$("#start_copying_button").hide();
 $("#change_contents").hide();
 $("#button_div").hide();
 $("#cat_place").hide();
@@ -3931,6 +3939,7 @@ $("#cat_sel").hide();
 $("#selCat").hide();
 $("#catTo").show();
 $("#cat_select_items_button").hide();
+
 
 
 
