@@ -3917,7 +3917,8 @@ function startUpdatingCategories() {
 
 $("#selection_menu").hide();
 $("#stylized").show();
-$("#change_selection_div").show();
+$("#change_selection_div").hide();
+$("#change_selection_div_categories_n_tags").show();
 $("#change_contents").hide();
 $("#start_copying_button").hide();
 
@@ -3929,25 +3930,28 @@ $("#change_contents").hide();
 $("#button_div").hide();
 $("#cat_place").hide();
 $("#cat_sel").hide();
-$("#selCat").hide();
+$("#selCat").show();
 $("#catTo").show();
 $("#cat_select_items_button").hide();
+$("#catFrom").css("margin-top","-250px");
+$("#cat_from_space").css("margin-top","-200px");
 
 
 
 
 
-$("#selected_items").show();
+$("#selected_items").hide();
+$("#change_selection_div_categories_n_tags").show();
 
 if(browserName=="MSIE")
 {
 var ieSpan='<span id="ieSpan" style="font-family:Tahoma;font-size:12px;font-color:#3778C7;"></span>';
-document.getElementById("selected_items").innerHTML=ieSpan; 
+document.getElementById("change_selection_div_categories_n_tags").innerHTML=ieSpan; 
 }
 else
 {
-var iframe = '<iframe id="frame1"  style="width:650px;height:90px;margin-top:0px;font-family:Tahoma"></iframe>';
-document.getElementById("selected_items").innerHTML=iframe;  
+var iframe = '<iframe id="frame2"  style="width:650px;height:90px;margin-top:0px;font-family:Tahoma"></iframe>';
+document.getElementById("change_selection_div_categories_n_tags").innerHTML=iframe;  
 $("#catTo").text("Updating this:");
 }
 
@@ -3958,10 +3962,10 @@ document.getElementById("ieSpan").innerHTML = 'The selected contents are being u
 }
 else
 {
-document.getElementById("frame1").contentDocument.body.style.fontFamily="Tahoma";	
-document.getElementById("frame1").contentDocument.body.style.fontSize = "12px";
-document.getElementById("frame1").contentDocument.body.style.color='Grey';
-document.getElementById("frame1").contentDocument.body.innerHTML = "Updating categories is in Progress.<br>Please leave this window open until the updating process has been completed.<br><br><span id='mySpan' style='font-weight:bold;'>"+'Updating content'.fontcolor("#3778C7")+"</span>";
+document.getElementById("frame2").contentDocument.body.style.fontFamily="Tahoma";	
+document.getElementById("frame2").contentDocument.body.style.fontSize = "12px";
+document.getElementById("frame2").contentDocument.body.style.color='Grey';
+document.getElementById("frame2").contentDocument.body.innerHTML = "Updating categories is in Progress.<br>Please leave this window open until the updating process has been completed.<br><br><span id='mySpan' style='font-weight:bold;'>"+'Updating content'.fontcolor("#3778C7")+"</span>";
 }
 	for(var index=0; index < mainCheckedItems.length;index++) {
 		//	alert("checked items : "+mainCheckedItems[index]);
