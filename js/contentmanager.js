@@ -3918,7 +3918,7 @@ function startUpdatingCategories() {
 
 $("#selection_menu").hide();
 $("#stylized").show();
-$("#change_selection_div").show();
+$("#change_selection_div").hide();
 $("#change_contents").hide();
 $("#start_copying_button").hide();
 
@@ -3940,7 +3940,7 @@ $("#cat_from_space").css("margin-top","-200px");
 
 
 
-$("#selected_items").show();
+$("#selected_items_categories").show();
 
 if(browserName=="MSIE")
 {
@@ -3950,7 +3950,7 @@ document.getElementById("selected_items").innerHTML=ieSpan;
 else
 {
 var iframe = '<iframe id="frame1"  style="width:650px;height:90px;margin-top:0px;font-family:Tahoma"></iframe>';
-document.getElementById("selected_items").innerHTML=iframe;  
+document.getElementById("selected_items_categories").innerHTML=iframe;  
 $("#catTo").text("Updating this:");
 }
 
