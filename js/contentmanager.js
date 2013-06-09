@@ -3877,8 +3877,8 @@ selected_cat=document.getElementById('cat_sel').value;
 alert("selected_cat = "+selected_cat);
 if (selected_cat=="val1")
 {
-$("#cat_select_items_button").hide();
-$("#catTo").hide();
+$("#cat_select_items_button").show();
+$("#catTo").show();
 }
 else
 {
