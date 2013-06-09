@@ -3882,6 +3882,8 @@ $("#catTo").hide();
 }
 else
 {
+$("#cat_select_items_button").remove();
+$("#catTo").remove();
 $("#cat_select_items_button").show();
 $("#catTo").show();
 }
