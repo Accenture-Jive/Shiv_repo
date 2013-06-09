@@ -2412,8 +2412,8 @@ function showTab(){
 console.log("array Len: "+addId.length);
  for (var i=0; i<addId.length; i++) 
  {
- console.log("value: "+addId[i]);
- document.getElementById(addId[i]).checked = true;
+	 console.log("value: "+addId[i]);
+	 document.getElementById(addId[i]).checked = true;
  }
  
 // actions when user choses to select content he wants to copy/move/delete/download.
@@ -2482,7 +2482,12 @@ var all_selected='';
 
 function goBack(){
 // handles the code for creating the final selection tables and the list of values to be passed to the server/javascript
-
+if(sel_action_val=="categs")
+{
+	
+		startUpdatingCategories();
+}
+else {
 all_selected='';
 Grp_file_json='';
 Grp_doc_json='';
@@ -2652,7 +2657,7 @@ all_selected='<table name="all_selected_items" id="all_selected_items" border="0
 document.getElementById("start_copying_button").disabled = true;
 document.getElementById("selected_items").innerHTML=all_selected;
 }
-
+}
 };
 
 function startCopying(){
@@ -3901,5 +3906,80 @@ $("#cat_select_items_button").show();
 $("#catTo").show();
 }
 
+}
+
+function startUpdatingCategories() {
+	//alert("catagory selectionn....");
+	//alert("browserName = "+browserName);
+
+
+
+$("#selection_menu").hide();
+$("#stylized").show();
+$("#change_selection_div").show();
+$("#change_contents").hide();
+$("#start_copying_button").hide();
+
+$("#cmdu").show();
+$("#cmdu").text("Manage Categories");
+$("#src_place").hide();
+$("#start_copying_button").hide();
+$("#change_contents").hide();
+$("#button_div").hide();
+$("#cat_place").hide();
+$("#cat_sel").hide();
+$("#selCat").hide();
+$("#catTo").show();
+$("#cat_select_items_button").hide();
+
+
+
+$("#selected_items").show();
+
+if(browserName=="MSIE")
+{
+var ieSpan='<span id="ieSpan" style="font-family:Tahoma;font-size:12px;font-color:#3778C7;"></span>';
+document.getElementById("selected_items").innerHTML=ieSpan; 
+}
+else
+{
+var iframe = '<iframe id="frame1"  style="width:650px;height:90px;margin-top:0px;font-family:Tahoma"></iframe>';
+document.getElementById("selected_items").innerHTML=iframe;  
+$("#catTo").text("Updating this:");
+}
+
+if(browserName=="MSIE")
+{
+var finalurl=redirection_url+'/content';
+document.getElementById("ieSpan").innerHTML = 'The selected contents are being update with category. The update contents will appear here in a short while: <a href='+'URL'+'>'+''+' - Contents</a>';
+}
+else
+{
+document.getElementById("frame1").contentDocument.body.style.fontFamily="Tahoma";	
+document.getElementById("frame1").contentDocument.body.style.fontSize = "12px";
+document.getElementById("frame1").contentDocument.body.style.color='Grey';
+document.getElementById("frame1").contentDocument.body.innerHTML = "Updating categories is in Progress.<br>Please leave this window open until the updating process has been completed.<br><br><span id='mySpan' style='font-weight:bold;'>"+'Updating content'.fontcolor("#3778C7")+"</span>";
+}
+	for(var index=0; index < mainCheckedItems.length;index++) {
+		//	alert("checked items : "+mainCheckedItems[index]);
+			//console.log("checked items : "+mainCheckedItems[index]);
+		}
+		
+		for(var index=0;index < mainUncheckItems.length;index++) {
+		//alert("unchecked items : "+mainUncheckItems[index]);
+			//console.log("unchecked items : "+mainUncheckItems[index]);
+		}
+		
+		//alert("mainCheckedItems.length = "+mainCheckedItems.length);
+		//console.log("mainCheckedItems.length = "+mainCheckedItems.length);
+		//alert("mainUncheckItems.length = "+mainUncheckItems.length);
+		//console.log("mainUncheckItems.length = "+mainUncheckItems.length);
+		//***********************************
+		//filterCheckedUncheckCatgUrl1();
+		
+	
+		catIndex = 0;
+		//updateCategoriesForNewContents1();
+		//removeCategoriesForContents();
 }
 //*********************************************************End*************
