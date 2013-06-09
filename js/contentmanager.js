@@ -3929,7 +3929,7 @@ $("#start_copying_button").hide();
 $("#change_contents").hide();
 $("#button_div").hide();
 $("#cat_place").hide();
-$("#cat_sel").hide();
+$("#cat_sel").show();
 $("#selCat").show();
 $("#selCat").text('Selected Category');
 $("#catTo").show();
