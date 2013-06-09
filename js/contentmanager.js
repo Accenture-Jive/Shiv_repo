@@ -3941,6 +3941,7 @@ $("#cat_from_space").css("margin-top","-200px");
 
 
 $("#selected_items_categories").show();
+$("#selected_items").show();
 
 if(browserName=="MSIE")
 {
