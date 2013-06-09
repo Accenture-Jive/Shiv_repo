@@ -3931,10 +3931,8 @@ $("#button_div").hide();
 $("#cat_place").hide();
 $("#cat_sel").hide();
 $("#selCat").show();
-$("#selCat").text('Selected Category');
 $("#catTo").show();
-$("#catTo").text(selected_cat);
-$("#catSelected").show();
+$("#catTo").show();
 $("#catFrom").text('Selected Place');
 $("#cat_select_items_button").hide();
 //$("#catFrom").css("margin-top","-250px");
@@ -3956,7 +3954,7 @@ else
 {
 var iframe = '<iframe id="frame1"  style="width:650px;height:90px;margin-top:0px;font-family:Tahoma"></iframe>';
 document.getElementById("selected_items_categories").innerHTML=iframe;  
-$("#catSelected").text("Updating this:");
+$("#catTo").text("Updating this:");
 }
 
 if(browserName=="MSIE")
