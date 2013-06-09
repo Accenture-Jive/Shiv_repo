@@ -3924,8 +3924,7 @@ $("#start_copying_button").hide();
 $("#cmdu").show();
 $("#cmdu").text("Manage Categories");
 $("#src_place").hide();
-$("#catFrom").hide('Selected Places');
-//$("#start_copying_button").hide();
+$("#start_copying_button").hide();
 $("#change_contents").hide();
 $("#button_div").hide();
 $("#cat_place").hide();
@@ -3933,6 +3932,7 @@ $("#cat_sel").hide();
 $("#selCat").hide();
 $("#catTo").show();
 $("#cat_select_items_button").hide();
+
 
 
 
