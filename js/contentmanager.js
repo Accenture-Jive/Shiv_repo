@@ -3931,12 +3931,11 @@ $("#button_div").hide();
 $("#cat_place").hide();
 $("#cat_sel").hide();
 $("#selCat").show();
-$("#showDiv").show();
 $("#catTo").show();
 $("#catTo").show();
 $("#cat_select_items_button").hide();
-$("#catFrom").css("margin-top","-250px");
-$("#cat_from_space").css("margin-top","-200px");
+//$("#catFrom").css("margin-top","-250px");
+//$("#cat_from_space").css("margin-top","px");
 
 
 
