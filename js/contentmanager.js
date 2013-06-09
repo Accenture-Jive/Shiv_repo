@@ -2407,6 +2407,15 @@ $(this).removeClass('borderadd');
 }
 
 function showTab(){
+
+//Check and unchect the content for Manage Tags and categories
+console.log("array Len: "+addId.length);
+ for (var i=0; i<addId.length; i++) 
+ {
+ console.log("value: "+addId[i]);
+ document.getElementById(addId[i]).checked = true;
+ }
+ 
 // actions when user choses to select content he wants to copy/move/delete/download.
 
 $("#stylized").hide();
@@ -3882,10 +3891,12 @@ $("#catTo").hide();
 }
 else
 {
+//*********************Hide and show for resetting the position of the element
 $("#cat_select_items_button").show();
 $("#catTo").show();
 $("#cat_select_items_button").hide();
 $("#catTo").hide();
+//***************************************End***************
 $("#cat_select_items_button").show();
 $("#catTo").show();
 }
