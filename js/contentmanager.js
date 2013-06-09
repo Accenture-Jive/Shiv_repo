@@ -584,6 +584,7 @@ $("#dwn_select_items_button").hide();
 
 $("#tab_items").show();
 $("#change_selection_div").hide();
+$("#selected_items_categories").hide();
 $('#select_items_button').hide();
 $("#showDiv").hide();
 $("#copyTo").hide();
